@@ -1,0 +1,19 @@
+{
+  "name": "quip_pro_quo_frontend",
+  "version": "1.0.0",
+  "description": "Frontend of Quip Pro Quo App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggiscool/quip_pro_quo_frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ggiscool/quip_pro_quo_frontend/issues"
+  },
+  "homepage": "https://github.com/ggiscool/quip_pro_quo_frontend#readme"
+}
