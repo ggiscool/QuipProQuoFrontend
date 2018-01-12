@@ -2,6 +2,10 @@
 <html ng-app='QuipProQuo'>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script
+	 src="https://code.jquery.com/jquery-3.2.1.min.js"
+	 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	 crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 	<script type="text/javascript" src='app.js'></script>
 	<title></title>
@@ -31,9 +35,11 @@
 					{{question.content}} <br>
 
 					<button ng-click='ctrl.displayForm(question.id)'>Answer</button>
+					<button ng-click="ctrl.viewAnswers()">View Answers</button>
 				</div>
 			</div>
 		</div>
+
 
 		<div ng-if='ctrl.category == 2' ng-repeat="question in ctrl.questions">
 			<div class="questionCard bgLightOrange" ng-if="question.category_id==2" ng-click='ctrl.pickQuestion(question.id)'>
@@ -54,6 +60,11 @@
 					</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="viewAnswersModal" ng-if="ctrl.viewAnswersModal == true">
+		Test
+
 	</div>
 
 	<form ng-if='ctrl.display == true' ng-submit='ctrl.answer()'>

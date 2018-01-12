@@ -10,6 +10,7 @@ app.controller('MainController', ['$http', function($http) {
 	this.display = false;
 	this.formData = {};
 	this.category = 0;
+	this.viewAnswersModal = false
 	// this.showQuestion = 0;
 
 // Get categories
@@ -83,4 +84,23 @@ app.controller('MainController', ['$http', function($http) {
 		this.questionID = question;
 	}
 
+this.viewAnswers = () => {
+	if (this.viewAnswersModal == false) {
+		this.viewAnswersModal = true
+	}else{
+		this.viewAnswersModal =false
+	}
+}
+
+
+
+
 }]);
+// Modal------------------
+//
+// $( () => {
+// 	const $viewAnswers = $('#viewAnswersBtn');
+// 	$viewAnswers.on('click', () => {
+// 		$('#viewAnswersModal').css('display', 'block')
+// });
+// });

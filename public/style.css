@@ -102,3 +102,9 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.viewAnswersModal {
+  width: 100%;
+  background: grey;
+  min-height: 200px;
+}
