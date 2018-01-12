@@ -7,8 +7,30 @@
 	<title></title>
 </head>
 <body ng-controller='MainController as ctrl'>
-
-	{{ ctrl.word }}
+	<ul>
+		<h1>Movies</h1>
+		<div ng-repeat="question in ctrl.questions">
+			<li ng-if="question.category_id==1">
+				{{question}}
+			</li>
+		</div>
+	</ul>
+	<ul>
+		<h1>Sports</h1>
+		<div ng-repeat="question in ctrl.questions">
+			<li ng-if="question.category_id==2">
+				{{question}}
+			</li>
+		</div>
+	</ul>
+	<ul>
+		<h1>Food</h1>
+		<div ng-repeat="question in ctrl.questions">
+			<li ng-if="question.category_id==3">
+				{{question}}
+			</li>
+		</div>
+	</ul>
 
 </body>
 </html>
