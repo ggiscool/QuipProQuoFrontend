@@ -20,7 +20,7 @@ app.controller('MainController', ['$http', function($http) {
 // Get Questions
 	$http({
 		method: 'GET',
-		url: 'http://localhost:3000/categories/questions'
+		url: 'http://localhost:3000/categories/1/questions'
 	}).then(response => {
 		console.log('Response: ', response);
 		this.questions = response.data;
