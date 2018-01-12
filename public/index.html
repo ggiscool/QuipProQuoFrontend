@@ -32,10 +32,11 @@
 			<div class="questionCard bgLightRed" ng-if="question.category_id==1" ng-click='ctrl.pickQuestion(question.id)'>
 				<h3>{{question.title}}</h3>
 				<div ng-if='ctrl.questionID == question.id'>
-					{{question.content}} <br>
-
-					<button ng-click='ctrl.displayForm(question.id)'>Answer</button>
-					<button ng-click="ctrl.viewAnswers()">View Answers</button>
+					<p>{{question.content}}</p> <br>
+					<div class="buttonBox">
+						<button class="answerButton" ng-click='ctrl.displayForm(question.id)'>Answer</button>
+						<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers()">View Answers</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -45,8 +46,11 @@
 			<div class="questionCard bgLightOrange" ng-if="question.category_id==2" ng-click='ctrl.pickQuestion(question.id)'>
 					<h3>{{question.title}}</h3>
 					<div ng-if='ctrl.questionID == question.id'>
-						{{question.content}} <br>
-						<button ng-click='ctrl.displayForm(question.id)'>Answer</button>
+						<p>{{question.content}}</p> <br>
+						<div class="buttonBox">
+							<button class="answerButton" ng-click='ctrl.displayForm(question.id)'>Answer</button>
+							<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers()">View Answers</button>
+						</div>
 					</div>
 			</div>
 		</div>
@@ -55,8 +59,11 @@
 			<div class="questionCard bgLightBlue" ng-if="question.category_id==3" ng-click='ctrl.pickQuestion(question.id)'>
 					<h3>{{question.title}}</h3>
 					<div ng-if='ctrl.questionID == question.id'>
-						{{question.content}} <br>
-						<button ng-click='ctrl.displayForm(question.id)'>Answer</button>
+						<p>{{question.content}}</p> <br>
+						<div class="buttonBox">
+							<button class="answerButton" ng-click='ctrl.displayForm(question.id)'>Answer</button>
+							<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers()">View Answers</button>
+						</div>
 					</div>
 			</div>
 		</div>

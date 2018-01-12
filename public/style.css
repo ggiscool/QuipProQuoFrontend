@@ -1,60 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans|Dosis|Source+Sans+Pro');
+
+/* font-family: 'Dosis', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Alegreya Sans', sans-serif; */
+
 /*red: #FF7B6A  */
 /*orange: #FFAB6A  */
 /*green: #66F48B  */
 /*blue: #64EFE5  */
 
 .red {
-  color: #FF7B6A
+  color: #FF7B6A;
 }
 .bgRed {
-  background: #FF7B6A
+  background: #FF7B6A;
 }
 .bgRed:hover {
   border: 5px solid #FF5A45;
   padding: 0;
 }
 .bgLightRed {
-  background: #FFA296
+  background: #FFA296;
 }
 .bgLightRed:hover {
   border: 5px solid #FF7B6A;
   padding: 0;
 }
 .orange {
-  color: #FFAB6A
+  color: #FFAB6A;
 }
 .bgOrange {
-  background: #FFAB6A
+  background: #FFAB6A;
 }
 .bgOrange:hover {
   border: 5px solid #FF9645;
   padding: 0;
 }
 .bgLightOrange {
-  background: #FFC396
+  background: #FFC396;
 }
 .bgLightOrange:hover {
   border: 5px solid #FFAB6A;
   padding: 0;
 }
 .green {
-  color: #66F48B
+  color: #66F48B;
 }
 .bgLightGreen {
-  background: #92FAAD
+  background: #92FAAD;
 }
 .blue {
-  color: #64EFE5
+  color: #64EFE5;
 }
 .bgBlue {
-  background: #64EFE5
+  background: #64EFE5;
 }
 .bgBlue:hover {
   border: 5px solid #3EE4DF;
   padding: 0;
 }
 .bgLightBlue {
-  background: #91F7EF
+  background: #91F7EF;
 }
 .bgLightBlue:hover {
   border: 5px solid #64EFE5;
@@ -62,6 +68,9 @@
 }
 .logo {
   text-align: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 40px;
+  line-height: 1;
 }
 .categoryCard {
   text-align: center;
@@ -72,6 +81,10 @@
   padding: 1px;
   box-sizing: border-box;
   margin-bottom: 10px;
+  /* font-family: 'Alegreya Sans', sans-serif; */
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  font-family: 'Dosis', sans-serif;
+
 }
 .questionCard {
   text-align: center;
@@ -107,4 +120,51 @@
   width: 100%;
   background: grey;
   min-height: 200px;
+}
+.viewAnswersBtn {
+  -webkit-appearance: none;
+  border: none;
+  border-radius: none;
+  box-sizing: border-box;
+  background-color: #40ED6E;
+  display: inline;
+}
+.answerButton {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  border-radius: none;
+  background-color: #92FAAD;
+  display: inline;
+}
+.answerButton:hover {
+  border: 3px solid #40ED6E;
+  padding: 1px;
+}
+
+.viewAnswersBtn:hover {
+  border: 3px solid #92FAAD;
+  padding: 1px;
+}
+
+.buttonBox {
+  background: grey;
+  margin: 0;
+}
+
+h3 {
+  line-height: 2px;
+  /* font-family: 'Alegreya Sans', sans-serif; */
+  font-family: 'Source Sans Pro', sans-serif;
+}
+p {
+  line-height: 1;
+  margin: 0;
+  /* font-family: 'Alegreya Sans', sans-serif; */
+  font-family: 'Source Sans Pro', sans-serif;
+}
+button {
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 12px;
+  border-radius: 10px;
 }
