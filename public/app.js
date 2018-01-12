@@ -10,6 +10,7 @@ app.controller('MainController', ['$http', function($http) {
 	this.display = false;
 	this.formData = {};
 	this.category = 0;
+	// this.showQuestion = 0;
 
 // Get categories
 	$http({
