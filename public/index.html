@@ -8,29 +8,51 @@
 </head>
 <body ng-controller='MainController as ctrl'>
 	<ul>
-		<h1>Movies</h1>
-		<div ng-repeat="question in ctrl.questions">
+		<h1 ng-click='ctrl.category1()'>Movies</h1>
+		<div ng-if='ctrl.category == 1' ng-repeat="question in ctrl.questions">
 			<li ng-if="question.category_id==1">
-				{{question}}
+				<div ng-click='ctrl.pickQuestion(question.id)'>
+				{{question.title}}: </div>
+				<button ng-if='ctrl.questionID == question.id' ng-click='ctrl.displayForm(question.id)'>Answer</button>
+				<div ng-if='ctrl.questionID == question.id'>
+				{{question.content}}
+				</div>
 			</li>
 		</div>
 	</ul>
 	<ul>
-		<h1>Sports</h1>
-		<div ng-repeat="question in ctrl.questions">
+		<h1 ng-click='ctrl.category2()'>Sports</h1>
+		<div ng-if='ctrl.category == 2' ng-repeat="question in ctrl.questions">
 			<li ng-if="question.category_id==2">
-				{{question}}
+				<div ng-click='ctrl.pickQuestion(question.id)'>
+				{{question.title}}: </div>
+				<button ng-if='ctrl.questionID == question.id' ng-click='ctrl.displayForm(question.id)'>Answer</button>
+				<div ng-if='ctrl.questionID == question.id'>
+				{{question.content}}
+				</div>
 			</li>
 		</div>
 	</ul>
 	<ul>
-		<h1>Food</h1>
-		<div ng-repeat="question in ctrl.questions">
+		<h1 ng-click='ctrl.category3()'>Food</h1>
+		<div ng-if='ctrl.category == 3' ng-repeat="question in ctrl.questions">
 			<li ng-if="question.category_id==3">
-				{{question}}
+				<div ng-click='ctrl.pickQuestion(question.id)'>
+				{{question.title}}: </div>
+				<button ng-if='ctrl.questionID == question.id' ng-click='ctrl.displayForm(question.id)'>Answer</button>
+				<div ng-if='ctrl.questionID == question.id'>
+				{{question.content}}
+				</div>
 			</li>
 		</div>
 	</ul>
+
+	<form ng-if='ctrl.display == true' ng-submit='ctrl.answer()'>
+		<input type='text' placeholder='Username' ng-model='ctrl.formData.username'>
+		<input type='text' placeholder='Answer' ng-model='ctrl.formData.content'>
+		<input type='hidden' value='0' ng-model='ctrl.formData.upvote'>
+		<input type='submit'>
+	</form>
 
 </body>
 </html>
