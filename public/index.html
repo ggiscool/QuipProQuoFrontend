@@ -10,22 +10,22 @@
 	<h1 class="logo"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</h1>
 
 	<div class="categoryFlex">
-		<div class="categoryCard" ng-click='ctrl.category1()'>
+		<div class="categoryCard bgRed" ng-click='ctrl.category = 1'>
 			<h1>Movies</h1>
 		</div>
 
-		<div class="categoryCard" ng-click='ctrl.category = 2'>
+		<div class="categoryCard bgOrange" ng-click='ctrl.category = 2'>
 			<h1>Sports</h1>
 		</div>
 
-		<div class="categoryCard" ng-click='ctrl.category3()'>
+		<div class="categoryCard bgBlue" ng-click='ctrl.category = 3'>
 			<h1>Food</h1>
 		</div>
 	</div>
 
 	<div class="questionFlex">
 		<div ng-if='ctrl.category == 1' ng-repeat="question in ctrl.questions">
-			<div class="questionCard" ng-if="question.category_id==1" ng-click='ctrl.pickQuestion(question.id)'>
+			<div class="questionCard bgLightRed" ng-if="question.category_id==1" ng-click='ctrl.pickQuestion(question.id)'>
 				<h3>{{question.title}}</h3>
 				<div ng-if='ctrl.questionID == question.id'>
 					{{question.content}} <br>
@@ -36,7 +36,7 @@
 		</div>
 
 		<div ng-if='ctrl.category == 2' ng-repeat="question in ctrl.questions">
-			<div class="questionCard" ng-if="question.category_id==2" ng-click='ctrl.pickQuestion(question.id)'>
+			<div class="questionCard bgLightOrange" ng-if="question.category_id==2" ng-click='ctrl.pickQuestion(question.id)'>
 					<h3>{{question.title}}</h3>
 					<div ng-if='ctrl.questionID == question.id'>
 						{{question.content}} <br>
@@ -46,7 +46,7 @@
 		</div>
 
 		<div ng-if='ctrl.category == 3' ng-repeat="question in ctrl.questions">
-			<div class="questionCard" ng-if="question.category_id==3" ng-click='ctrl.pickQuestion(question.id)'>
+			<div class="questionCard bgLightBlue" ng-if="question.category_id==3" ng-click='ctrl.pickQuestion(question.id)'>
 					<h3>{{question.title}}</h3>
 					<div ng-if='ctrl.questionID == question.id'>
 						{{question.content}} <br>

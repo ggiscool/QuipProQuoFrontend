@@ -6,14 +6,53 @@
 .red {
   color: #FF7B6A
 }
+.bgRed {
+  background: #FF7B6A
+}
+.bgRed:hover {
+  border: 5px solid #FF5A45;
+}
+.bgLightRed {
+  background: #FFA296
+}
+.bgLightRed:hover {
+  border: 5px solid #FF7B6A;
+}
 .orange {
   color: #FFAB6A
+}
+.bgOrange {
+  background: #FFAB6A
+}
+.bgOrange:hover {
+  border: 5px solid #FF9645;
+}
+.bgLightOrange {
+  background: #FFC396
+}
+.bgLightOrange:hover {
+  border: 5px solid #FFAB6A;
 }
 .green {
   color: #66F48B
 }
+.bgLightGreen {
+  background: #92FAAD
+}
 .blue {
   color: #64EFE5
+}
+.bgBlue {
+  background: #64EFE5
+}
+.bgBlue:hover {
+  border: 5px solid #3EE4DF;
+}
+.bgLightBlue {
+  background: #91F7EF
+}
+.bgLightBlue:hover {
+  border: 5px solid #64EFE5;
 }
 .logo {
   text-align: center;
@@ -22,29 +61,11 @@
   text-align: center;
   width: 200px;
   height: 200px;
-  /* background: #64EFE5; */
   border-radius: 10px;
   cursor: pointer;
   padding: 1px;
-  border: 5px solid #64EFE5;
   box-sizing: border-box;
   margin-bottom: 10px;
-}
-.categoryCard:hover {
-  background: #3EE4D7;
-  border: 5px solid #1AD0C3;
-  /* width: 205px;
-  height: 205px; */
-  /* box-shadow: 0px 5px rgba(200, 200, 200, .5); */
-}
-.categoryCard:nth-last-of-type(1){
-  background: #64EFE5;
-}
-.categoryCard:nth-last-of-type(2){
-  background: #FFAB6A;
-}
-.categoryCard:nth-last-of-type(3){
-  background: #FF7B6A;
 }
 .questionCard {
   text-align: center;
@@ -52,11 +73,9 @@
   height: 150px;
   border-radius: 7px;
   cursor: pointer;
-  padding: 1px;
-  border: 3px solid #64EFE5;
+  padding: 4px;
   box-sizing: border-box;
   margin: 0 5px 5px 5px;
-  /* margin-bottom: 10px; */
 }
 
 .categoryFlex {

@@ -63,20 +63,20 @@ app.controller('MainController', ['$http', function($http) {
 		}
 	};
 
-	this.category1 = () => {
-
-		this.category = 1;
-	}
-
-	this.category2 = () => {
-
-		this.category = 2;
-	}
-
-	this.category3 = () => {
-
-		this.category = 3;
-	}
+	// this.category1 = () => {
+  //
+	// 	this.category = 1;
+	// }
+  //
+	// this.category2 = () => {
+  //
+	// 	this.category = 2;
+	// }
+  //
+	// this.category3 = () => {
+  //
+	// 	this.category = 3;
+	// }
 
 	this.pickQuestion = (question) => {
 
