@@ -7,9 +7,9 @@ app.controller('MainController', ['$http', function($http) {
 	this.questions = []
 
 // Get categories
-	http({
+	$http({
 		method: 'GET',
-		url: 'http://localhost:3000/categories',
+		url: 'http://localhost:3000/categories'
 	}).then(response => {
 		console.log('Response: ', response);
 		this.categories = response.data;
@@ -18,9 +18,9 @@ app.controller('MainController', ['$http', function($http) {
 	});
 
 // Get Questions
-	http({
+	$http({
 		method: 'GET',
-		url: 'http://localhost:3000/categories/questions',
+		url: 'http://localhost:3000/categories/questions'
 	}).then(response => {
 		console.log('Response: ', response);
 		this.questions = response.data;
