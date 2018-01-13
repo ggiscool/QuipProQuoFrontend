@@ -10,12 +10,12 @@ font-family: 'Alegreya Sans', sans-serif; */
 /*blue: #64EFE5  */
 
 h3 {
-  line-height: 2px;
+  line-height: 1;
   font-family: 'Source Sans Pro', sans-serif;
 }
 p {
-  line-height: 1;
-  margin: 0;
+  /* line-height: 1;
+  margin: 0; */
   font-family: 'Source Sans Pro', sans-serif;
 }
 button {
