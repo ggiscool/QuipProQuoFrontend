@@ -129,7 +129,7 @@ font-family: 'Alegreya Sans', sans-serif; */
 .viewAnswersBtn {
   -webkit-appearance: none;
   border: none;
-  border-radius: none;
+  border-radius: 10px;
   box-sizing: border-box;
   background-color: #40ED6E;
   display: inline;
@@ -137,7 +137,7 @@ font-family: 'Alegreya Sans', sans-serif; */
 .answerButton {
   -webkit-appearance: none;
   box-sizing: border-box;
-  border-radius: none;
+  border-radius: 9px;
   background-color: #92FAAD;
   display: inline;
 }
@@ -156,6 +156,7 @@ font-family: 'Alegreya Sans', sans-serif; */
   box-sizing: border-box;
   margin: 0;
   width: 150px;
+  height: 25px;
   margin: 0px 5px 0px 5px;
   border-radius: 0 0 7px 7px;
 }
@@ -172,5 +173,4 @@ p {
 button {
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 12px;
-  border-radius: 10px;
 }
