@@ -9,6 +9,31 @@ font-family: 'Alegreya Sans', sans-serif; */
 /*green: #66F48B  */
 /*blue: #64EFE5  */
 
+h3 {
+  line-height: 2px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+p {
+  line-height: 1;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+button {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 12px;
+  border: none;
+}
+button:active {
+  box-shadow: none;
+  border: none;
+}
+input {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 12px;
+  border: none;
+}
+
+
 .red {
   color: #FF7B6A;
 }
@@ -110,6 +135,9 @@ font-family: 'Alegreya Sans', sans-serif; */
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  border-top: 5px solid grey;
+  border-bottom: 5px solid grey;
+  padding: 10px 0 10px 0;
 }
 
 .questionFlex {
@@ -122,9 +150,11 @@ font-family: 'Alegreya Sans', sans-serif; */
 }
 
 .viewAnswersModal {
+  text-align: center;
   width: 100%;
-  background: grey;
+  background: rgba(100, 100, 100, .5);
   min-height: 200px;
+  padding: 10px;
 }
 .viewAnswersBtn {
   -webkit-appearance: none;
@@ -169,25 +199,26 @@ font-family: 'Alegreya Sans', sans-serif; */
   margin: 0;
   width: 150px;
   height: 25px;
-  margin: 0px 5px 0px 5px;
+  margin: 0px 5px 5px 5px;
   border-radius: 0 0 7px 7px;
   padding: 3px 5px 0px 5px;
 }
-
-h3 {
-  line-height: 2px;
-  font-family: 'Source Sans Pro', sans-serif;
+.submitAnsForm {
+  /* border: 1px solid brown; */
+  text-align: center;
+  margin-bottom: 5px;
 }
-p {
-  line-height: 1;
-  margin: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+.textField {
+  border-radius: 9px;
+  background-color: #FFFFFF;
+  border: 1px solid #92FAAD;
 }
-button {
-  font-family: 'Alegreya Sans', sans-serif;
-  font-size: 12px;
+.submitBtn {
+  border-radius: 9px;
+  background-color: #92FAAD;
+  /* border: 1px solid #92FAAD; */
 }
-button:active {
-  box-shadow: none;
-  border: none;
+.submitBtn:hover {
+  cursor: pointer;
+  background-color: #40ED6E;
 }

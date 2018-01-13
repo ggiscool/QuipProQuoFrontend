@@ -69,21 +69,22 @@
 		</div>
 	</div>
 
+	<form class="submitAnsForm" ng-if='ctrl.display == true' ng-submit='ctrl.answer()'>
+		<input class="textField" type='text' placeholder='Username' ng-model='ctrl.formData.username'>
+		<input class="textField" type='text' placeholder='Answer' ng-model='ctrl.formData.content'>
+		<input type='hidden' value='0' ng-model='ctrl.formData.upvote'>
+		<input class="submitBtn" type='submit'>
+	</form>
+
 	<div class="viewAnswersModal" ng-if="ctrl.viewAnswersModal == true">
+		<h3>Answers</h3>
 		<ul>
 			<li ng-repeat='answer in ctrl.findanswer'>
-				User: {{ answer.username }} , Content: {{ answer.content }} , Upvotes: {{ answer.upvote }}
+				{{ answer.username }}: {{ answer.content }} {{ answer.upvote }} <button >Upvote</button>
 			</li>
 		</ul>
 
 	</div>
-
-	<form ng-if='ctrl.display == true' ng-submit='ctrl.answer()'>
-		<input type='text' placeholder='Username' ng-model='ctrl.formData.username'>
-		<input type='text' placeholder='Answer' ng-model='ctrl.formData.content'>
-		<input type='hidden' value='0' ng-model='ctrl.formData.upvote'>
-		<input type='submit'>
-	</form>
 
 </body>
 </html>

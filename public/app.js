@@ -44,9 +44,11 @@ app.controller('MainController', ['$http', function($http) {
 			data: this.formData
 		}).then(response => {
 			console.log('Response ', response.data);
+			// console.log('Upvote', response.data.upvote);
 			this.answer = response.data;
 		}).catch(reject => {
 			console.log('Reject: ', reject);
+			alert('Must Fill Out All Fields');
 		});
 
 	};
