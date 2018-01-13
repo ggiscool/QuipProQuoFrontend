@@ -75,18 +75,18 @@
 	<div class="viewAnswersModal" ng-if="ctrl.viewAnswersModal == true">
 		<h3>Submitted Answers</h3>
 			<!-- <div class="ansBox"> -->
-				<div class="ansBox" ng-repeat='answer in ctrl.findanswer'>
-					<p><span class="white">{{ answer.username }}</span>: {{ answer.content }}</p> <p class="white">{{ answer.upvote }}</p> <button class="upVoteBtn">Upvote</button>
+				<div class="ansBox" ng-repeat="answer in ctrl.findanswer | orderBy: '-upvote'">
+					<p><span class="white">{{ answer.username }}</span>: {{ answer.content }}</p> <p class="white">{{ answer.upvote }}</p> <button class="upVoteBtn" ng-click='ctrl.upvote(answer.id)'>Upvote</button>
 				</div>
 			<!-- </div> -->
 	</div>
 
 	<div class="ansFormModel" ng-if='ctrl.display == true'>
 		<p>{{ctrl.questionContent}}</p>
-		<form class="submitAnsForm"  ng-submit='ctrl.answer()'>
+		<form class="submitAnsForm"  ng-submit='ctrl.addanswer()'>
 			<input class="textField" type='text' placeholder=' Username' ng-model='ctrl.formData.username' required>
 			<input class="textField" type='text' placeholder=' Answer' ng-model='ctrl.formData.content' required>
-			<input type='hidden' value='0' ng-model='ctrl.formData.upvote'>
+			<input type='hidden' ng-model='ctrl.formData.upvote'>
 			<input class="submitBtn" type='submit'>
 		</form>
 		<button class="closeBtn" ng-click='ctrl.closeModel()'>Close</button>

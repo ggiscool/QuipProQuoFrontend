@@ -9,7 +9,7 @@ app.controller('MainController', ['$http', function($http) {
 	this.questionContent = '';
 	this.findanswer = [];
 	this.display = false;
-	this.formData = {};
+	this.formData = {upvote: 0};
 	this.category = 0;
 	this.viewAnswersModal = false
 	this.currentquestion = false;
@@ -37,7 +37,7 @@ app.controller('MainController', ['$http', function($http) {
 		console.log('Reject: ', reject);
 	});
 
-	this.answer = () => {
+	this.addanswer = () => {
 
 		$http({
 			method: 'POST',
@@ -47,6 +47,7 @@ app.controller('MainController', ['$http', function($http) {
 			console.log('Response ', response.data);
 			this.formData = {};
 			this.answer = response.data;
+			this.findanswer.push(this.answer);
 
 		}).catch(reject => {
 			console.log('Reject: ', reject);
@@ -127,7 +128,25 @@ this.viewAnswers = (question) => {
 
 
 	this.questionID = question;
-}
+	}
+
+	this.upvote = (answerid) => {
+
+		console.log(answerid);
+
+		$http({
+			method: 'PUT',
+			url: 'http://localhost:3000/categories/1/questions/' + this.questionID + '/answers/' + answerid
+		}).then(response => {
+			console.log('Response: ', response);
+		}).catch(reject => {
+				console.log('Reject: ', reject);
+		});
+
+		let index = this.findanswer.findIndex(i => i.id === answerid);
+	
+		this.findanswer[index].upvote += 1;
+	}
 
 	this.closeModel = () => {
 		this.display = false;
