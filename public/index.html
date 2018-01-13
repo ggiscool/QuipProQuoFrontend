@@ -70,8 +70,8 @@
 	</div>
 
 	<form class="submitAnsForm" ng-if='ctrl.display == true' ng-submit='ctrl.answer()'>
-		<input class="textField" type='text' placeholder='Username' ng-model='ctrl.formData.username'>
-		<input class="textField" type='text' placeholder='Answer' ng-model='ctrl.formData.content'>
+		<input class="textField" type='text' placeholder='Username' ng-model='ctrl.formData.username' required>
+		<input class="textField" type='text' placeholder='Answer' ng-model='ctrl.formData.content' required>
 		<input type='hidden' value='0' ng-model='ctrl.formData.upvote'>
 		<input class="submitBtn" type='submit'>
 	</form>

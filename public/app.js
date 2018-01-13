@@ -48,7 +48,6 @@ app.controller('MainController', ['$http', function($http) {
 			this.answer = response.data;
 		}).catch(reject => {
 			console.log('Reject: ', reject);
-			alert('Must Fill Out All Fields');
 		});
 
 	};
