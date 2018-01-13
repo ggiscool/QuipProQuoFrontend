@@ -76,7 +76,7 @@
 		<h3>Submitted Answers</h3>
 			<!-- <div class="ansBox"> -->
 				<div class="ansBox" ng-repeat="answer in ctrl.findanswer | orderBy: '-upvote'">
-					<p><span class="white">{{ answer.username }}</span>: {{ answer.content }}</p> <p class="white">{{ answer.upvote }}</p> <button class="upVoteBtn" ng-click='ctrl.upvote(answer.id)'>Upvote</button>
+					<p><span class="white">{{ answer.username }}</span>:</p> <p>{{ answer.content }}</p>  <p class="white">{{ answer.upvote }} <button class="upVoteBtn" ng-click='ctrl.upvote(answer.id)'>Upvote</button></p>
 				</div>
 			<!-- </div> -->
 	</div>
