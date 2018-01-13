@@ -36,7 +36,7 @@
 				</div>
 			</div>
 			<div class="buttonBox bgLightRedNH" ng-if='ctrl.questionID == question.id'>
-				<button class="answerButton" ng-click='ctrl.displayForm(question.id)'>Answer</button>
+				<button class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
 				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
 			</div>
 		</div>
@@ -50,7 +50,7 @@
 				</div>
 			</div>
 			<div class="buttonBox bgLightOrangeNH" ng-if='ctrl.questionID == question.id'>
-				<button class="answerButton" ng-click='ctrl.displayForm(question.id)'>Answer</button>
+				<button class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
 				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
 			</div>
 		</div>
@@ -63,18 +63,14 @@
 				</div>
 			</div>
 			<div class="buttonBox bgLightBlueNH" ng-if='ctrl.questionID == question.id'>
-				<button class="answerButton" ng-click='ctrl.displayForm(question.id)'>Answer</button>
+				<button class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
 				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
 			</div>
 		</div>
 	</div>
 
-	<form class="submitAnsForm" ng-if='ctrl.display == true' ng-submit='ctrl.answer()'>
-		<input class="textField" type='text' placeholder='Username' ng-model='ctrl.formData.username' required>
-		<input class="textField" type='text' placeholder='Answer' ng-model='ctrl.formData.content' required>
-		<input type='hidden' value='0' ng-model='ctrl.formData.upvote'>
-		<input class="submitBtn" type='submit'>
-	</form>
+
+
 
 	<div class="viewAnswersModal" ng-if="ctrl.viewAnswersModal == true">
 		<h3>Answers</h3>
@@ -83,7 +79,17 @@
 				{{ answer.username }}: {{ answer.content }} {{ answer.upvote }} <button >Upvote</button>
 			</li>
 		</ul>
+	</div>
 
+	<div class="ansFormModel" ng-if='ctrl.display == true'>
+		<button class="closeBtn" ng-click='ctrl.closeModel()'>Close</button><br>
+		<p>{{ctrl.questionContent}}</p>
+		<form class="submitAnsForm"  ng-submit='ctrl.answer()'>
+			<input class="textField" type='text' placeholder=' Username' ng-model='ctrl.formData.username' required>
+			<input class="textField" type='text' placeholder=' Answer' ng-model='ctrl.formData.content' required>
+			<input type='hidden' value='0' ng-model='ctrl.formData.upvote'>
+			<input class="submitBtn" type='submit'>
+		</form>
 	</div>
 
 </body>

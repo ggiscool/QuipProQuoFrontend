@@ -6,6 +6,7 @@ app.controller('MainController', ['$http', function($http) {
 	this.categories = []
 	this.questions = []
 	this.questionID = 0;
+	this.questionContent = '';
 	this.findanswer = [];
 	this.display = false;
 	this.formData = {};
@@ -45,6 +46,7 @@ app.controller('MainController', ['$http', function($http) {
 		}).then(response => {
 			console.log('Response ', response.data);
 			// console.log('Upvote', response.data.upvote);
+			this.formData = '';
 			this.answer = response.data;
 		}).catch(reject => {
 			console.log('Reject: ', reject);
@@ -57,7 +59,8 @@ app.controller('MainController', ['$http', function($http) {
 		if (this.display == false) {
 
 			this.display = true;
-			this.questionID = question;
+			this.questionID = question.id;
+			this.questionContent = question.content;
 		}
 
 		else {
@@ -126,7 +129,10 @@ this.viewAnswers = (question) => {
 	this.questionID = question;
 }
 
-
+	this.closeModel = () => {
+		this.display = false;
+		this.formData = null;
+	}
 
 
 }]);
