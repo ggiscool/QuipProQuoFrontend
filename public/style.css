@@ -98,7 +98,7 @@ font-family: 'Alegreya Sans', sans-serif; */
   height: 150px;
   border-radius: 7px 7px 0 0;
   cursor: pointer;
-  padding: 5px;
+  padding: 4px;
   box-sizing: border-box;
   margin: 10px 5px 0px 5px;
 }
@@ -133,25 +133,37 @@ font-family: 'Alegreya Sans', sans-serif; */
   box-sizing: border-box;
   background-color: #40ED6E;
   display: inline;
+  width: 85px;
+  height: 18px;
+}
+.viewAnswersBtn:hover {
+  border: 2px solid #92FAAD;
+  cursor: pointer;
+  /* width: 83px; */
 }
 .answerButton {
   -webkit-appearance: none;
   box-sizing: border-box;
   border-radius: 9px;
-  background-color: #92FAAD;
+  background-color: #FFFFFF;
+  border: 1px solid #92FAAD;
   display: inline;
+  width: 52px;
+  height: 18px;
 }
 .answerButton:hover {
-  border: 3px solid #40ED6E;
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
-
-.viewAnswersBtn:hover {
-  border: 3px solid #92FAAD;
+  border: 2px solid #40ED6E;
+  cursor: pointer;
+  width: 51px;
+  /* padding-top: 1px;
+  padding-bottom: 1px; */
 }
 
 .buttonBox {
+  /* border: 1px solid brown; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   text-align: center;
   box-sizing: border-box;
   margin: 0;
@@ -159,6 +171,7 @@ font-family: 'Alegreya Sans', sans-serif; */
   height: 25px;
   margin: 0px 5px 0px 5px;
   border-radius: 0 0 7px 7px;
+  padding: 3px 5px 0px 5px;
 }
 
 h3 {
@@ -173,4 +186,8 @@ p {
 button {
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 12px;
+}
+button:active {
+  box-shadow: none;
+  border: none;
 }
