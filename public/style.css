@@ -150,6 +150,8 @@ font-family: 'Alegreya Sans', sans-serif; */
 .buttonBox {
   background: grey;
   margin: 0;
+  width: 150px;
+  margin: 0px 5px 0px 5px;
 }
 
 h3 {

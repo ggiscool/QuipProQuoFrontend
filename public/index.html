@@ -14,15 +14,15 @@
 	<h1 class="logo"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</h1>
 
 	<div class="categoryFlex">
-		<div class="categoryCard bgRed" ng-click='ctrl.category = 1'>
+		<div class="categoryCard bgRed" ng-click='ctrl.category1()'>
 			<h1>Movies</h1>
 		</div>
 
-		<div class="categoryCard bgOrange" ng-click='ctrl.category = 2'>
+		<div class="categoryCard bgOrange" ng-click='ctrl.category2()'>
 			<h1>Sports</h1>
 		</div>
 
-		<div class="categoryCard bgBlue" ng-click='ctrl.category = 3'>
+		<div class="categoryCard bgBlue" ng-click='ctrl.category3()'>
 			<h1>Food</h1>
 		</div>
 	</div>
@@ -33,11 +33,11 @@
 				<h3>{{question.title}}</h3>
 				<div ng-if='ctrl.questionID == question.id'>
 					<p>{{question.content}}</p> <br>
-					<div class="buttonBox">
-						<button class="answerButton" ng-click='ctrl.displayForm(question.id)'>Answer</button>
-						<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers()">View Answers</button>
-					</div>
 				</div>
+			</div>
+			<div class="buttonBox" ng-if='ctrl.questionID == question.id'>
+				<button class="answerButton" ng-click='ctrl.displayForm(question.id)'>Answer</button>
+				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
 			</div>
 		</div>
 
@@ -45,32 +45,36 @@
 		<div ng-if='ctrl.category == 2' ng-repeat="question in ctrl.questions">
 			<div class="questionCard bgLightOrange" ng-if="question.category_id==2" ng-click='ctrl.pickQuestion(question.id)'>
 					<h3>{{question.title}}</h3>
-					<div ng-if='ctrl.questionID == question.id'>
-						<p>{{question.content}}</p> <br>
-						<div class="buttonBox">
-							<button class="answerButton" ng-click='ctrl.displayForm(question.id)'>Answer</button>
-							<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers()">View Answers</button>
-						</div>
-					</div>
+				<div ng-if='ctrl.questionID == question.id'>
+					<p>{{question.content}}</p> <br>
+				</div>
+			</div>
+			<div class="buttonBox" ng-if='ctrl.questionID == question.id'>
+				<button class="answerButton" ng-click='ctrl.displayForm(question.id)'>Answer</button>
+				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
 			</div>
 		</div>
 
 		<div ng-if='ctrl.category == 3' ng-repeat="question in ctrl.questions">
 			<div class="questionCard bgLightBlue" ng-if="question.category_id==3" ng-click='ctrl.pickQuestion(question.id)'>
 					<h3>{{question.title}}</h3>
-					<div ng-if='ctrl.questionID == question.id'>
-						<p>{{question.content}}</p> <br>
-						<div class="buttonBox">
-							<button class="answerButton" ng-click='ctrl.displayForm(question.id)'>Answer</button>
-							<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers()">View Answers</button>
-						</div>
-					</div>
+				<div ng-if='ctrl.questionID == question.id'>
+					<p>{{question.content}}</p> <br>
+				</div>
+			</div>
+			<div class="buttonBox" ng-if='ctrl.questionID == question.id'>
+				<button class="answerButton" ng-click='ctrl.displayForm(question.id)'>Answer</button>
+				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
 			</div>
 		</div>
 	</div>
 
 	<div class="viewAnswersModal" ng-if="ctrl.viewAnswersModal == true">
-		Test
+		<ul>
+			<li ng-repeat='answer in ctrl.findanswer'>
+				User: {{ answer.username }} , Content: {{ answer.content }} , Upvotes: {{ answer.upvote }}
+			</li>
+		</ul>
 
 	</div>
 
