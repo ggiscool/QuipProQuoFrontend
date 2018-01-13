@@ -33,7 +33,9 @@ input {
   border: none;
 }
 
-
+.white {
+  color: #FFFFFF;
+}
 .red {
   color: #FF7B6A;
 }
@@ -77,11 +79,20 @@ input {
 .green {
   color: #66F48B;
 }
+/* .lightGreen {
+  color: #92FAAD;
+}
+.darkGreen {
+  color: #1CE050;
+} */
 .bgLightGreen {
   background: #92FAAD;
 }
 .blue {
   color: #64EFE5;
+}
+.lightBlue {
+  color: #91F7EF;
 }
 .bgBlue {
   background: #64EFE5;
@@ -185,12 +196,9 @@ input {
   border: 2px solid #40ED6E;
   cursor: pointer;
   width: 51px;
-  /* padding-top: 1px;
-  padding-bottom: 1px; */
 }
 
 .buttonBox {
-  /* border: 1px solid brown; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -207,20 +215,22 @@ input {
   text-align: center;
   width: 100%;
   height: 100%;
-  background: rgba(100, 100, 100, .5);
-  position: absolute;
+  background: rgba(100, 100, 100, .7);
+  position: fixed;
   z-index: 10;
   top: 0;
   padding-top: 25%;
 }
+.ansFormModel > p {
+  color: #FFFFFF;
+}
 .submitAnsForm {
-  height: 80px;
+  /* border: 1px solid brown; */
+  height: 40px;
   width: 300px;
   margin: 0 auto;
   vertical-align: middle;
-  /* background: rgba(100, 100, 100, .9); */
   text-align: center;
-  margin-bottom: 5px;
 }
 .textField {
   margin-top: 10px;
@@ -229,21 +239,30 @@ input {
   border: 1px solid #92FAAD;
 }
 .submitBtn {
-  /* margin-top: 30px; */
+  margin-top: 10px;
   border-radius: 9px;
   background-color: #92FAAD;
-  /* border: 1px solid #92FAAD; */
 }
 .submitBtn:hover {
   cursor: pointer;
   background-color: #40ED6E;
 }
 .closeBtn {
-  margin-bottom: 10px;
+  margin-top: 5px;
   border-radius: 9px;
   background-color: #FF7B6A;
-  /* border: 1px solid #92FAAD; */
 }
 .closeBtn:hover {
   cursor: pointer;
+}
+.ansBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px auto;
+  max-width: 250px;
+  text-align: right;
+}
+.upVoteBtn {
+  background: #91F7EF;
 }

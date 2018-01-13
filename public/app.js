@@ -45,13 +45,13 @@ app.controller('MainController', ['$http', function($http) {
 			data: this.formData
 		}).then(response => {
 			console.log('Response ', response.data);
-			// console.log('Upvote', response.data.upvote);
-			this.formData = '';
+			this.formData = {};
 			this.answer = response.data;
+
 		}).catch(reject => {
 			console.log('Reject: ', reject);
 		});
-
+		this.closeModel();
 	};
 
 	this.displayForm = (question) => {
