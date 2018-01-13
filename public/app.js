@@ -66,21 +66,21 @@ app.controller('MainController', ['$http', function($http) {
 	};
 
 	this.category1 = () => {
-  
+
 		this.category = 1;
 		this.viewAnswersModal = false;
 		this.questionID = 0;
 	}
-  
+
 	this.category2 = () => {
-  
+
 		this.category = 2;
 		this.viewAnswersModal = false;
 		this.questionID = 0;
 	}
-  
+
 	this.category3 = () => {
-  
+
 		this.category = 3;
 		this.viewAnswersModal = false;
 		this.questionID = 0;
@@ -111,6 +111,8 @@ this.viewAnswers = (question) => {
 
 	if (this.viewAnswersModal == false) {
 		this.viewAnswersModal = true
+	} else {
+		this.viewAnswersModal = false
 	}
 
 	if (this.currentquestion == false) {

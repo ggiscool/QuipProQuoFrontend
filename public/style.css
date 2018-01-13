@@ -22,6 +22,9 @@ font-family: 'Alegreya Sans', sans-serif; */
 .bgLightRed {
   background: #FFA296;
 }
+.bgLightRedNH {
+  background: #FFA296;
+}
 .bgLightRed:hover {
   border: 5px solid #FF7B6A;
   padding: 0;
@@ -37,6 +40,9 @@ font-family: 'Alegreya Sans', sans-serif; */
   padding: 0;
 }
 .bgLightOrange {
+  background: #FFC396;
+}
+.bgLightOrangeNH {
   background: #FFC396;
 }
 .bgLightOrange:hover {
@@ -62,6 +68,9 @@ font-family: 'Alegreya Sans', sans-serif; */
 .bgLightBlue {
   background: #91F7EF;
 }
+.bgLightBlueNH {
+  background: #91F7EF;
+}
 .bgLightBlue:hover {
   border: 5px solid #64EFE5;
   padding: 0;
@@ -80,9 +89,6 @@ font-family: 'Alegreya Sans', sans-serif; */
   cursor: pointer;
   padding: 1px;
   box-sizing: border-box;
-  margin-bottom: 10px;
-  /* font-family: 'Alegreya Sans', sans-serif; */
-  /* font-family: 'Source Sans Pro', sans-serif; */
   font-family: 'Dosis', sans-serif;
 
 }
@@ -90,11 +96,11 @@ font-family: 'Alegreya Sans', sans-serif; */
   text-align: center;
   width: 150px;
   height: 150px;
-  border-radius: 7px;
+  border-radius: 7px 7px 0 0;
   cursor: pointer;
   padding: 5px;
   box-sizing: border-box;
-  margin: 0 5px 5px 5px;
+  margin: 10px 5px 0px 5px;
 }
 
 .categoryFlex {
@@ -107,7 +113,6 @@ font-family: 'Alegreya Sans', sans-serif; */
 }
 
 .questionFlex {
-  /* border: 1px solid brown; */
   margin: 0 auto;
   max-width: 800px;
   display: flex;
@@ -144,29 +149,27 @@ font-family: 'Alegreya Sans', sans-serif; */
 
 .viewAnswersBtn:hover {
   border: 3px solid #92FAAD;
-  /* padding: 1px; */
 }
 
 .buttonBox {
-  background: grey;
+  text-align: center;
+  box-sizing: border-box;
   margin: 0;
   width: 150px;
   margin: 0px 5px 0px 5px;
+  border-radius: 0 0 7px 7px;
 }
 
 h3 {
   line-height: 2px;
-  /* font-family: 'Alegreya Sans', sans-serif; */
   font-family: 'Source Sans Pro', sans-serif;
 }
 p {
   line-height: 1;
   margin: 0;
-  /* font-family: 'Alegreya Sans', sans-serif; */
   font-family: 'Source Sans Pro', sans-serif;
 }
 button {
-  /* font-family: 'Source Sans Pro', sans-serif; */
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 12px;
   border-radius: 10px;
