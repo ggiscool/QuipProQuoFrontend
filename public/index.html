@@ -7,13 +7,32 @@
 	 src="https://code.jquery.com/jquery-3.2.1.min.js"
 	 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	 crossorigin="anonymous"></script> -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script> -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
 	<script type="text/javascript" src='app.js'></script>
 	<title></title>
 </head>
 <body ng-controller='MainController as ctrl'>
 	<h1 class="logo"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</h1>
 	<p class="intro"><span class="bigFont">Welcome to <span class="dosis"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</span></span><br> The objective is to answer whichever questions you choose with the funniest answer you can think of. You can also vote on your favorite answers submitted by other users!</p>
+
+<!-- authentication -->
+	<form ng-submit="ctrl.login(userPass)">
+      <input type="text" ng-model="userPass.username" placeholder="username"/>
+      <input type="password" ng-model="userPass.password" placeholder="password"/>
+      <input type="submit"/>
+  </form>
+
+  <a href="#" ng-click="ctrl.logout()"> Log Out</a>
+
+  <p>Logged in username: {{ ctrl.user.username }}</p>
+  <h4 ng-click="ctrl.getUsers()">Click to see secret stuff</h4>
+  <div> {{ ctrl.error}} </div>
+
+  <div ng-repeat="user in ctrl.users">
+    <h1>{{ user.username }}</h1>
+  </div>
+
 
 	<div class="categoryFlex">
 		<div class="categoryCard bgRed" ng-click='ctrl.category1()'>
