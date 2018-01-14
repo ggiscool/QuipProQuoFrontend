@@ -46,6 +46,9 @@ input {
   -moz-appearance:    none;
   appearance:         none;
 }
+.dosis {
+  font-family: 'Dosis', sans-serif;
+}
 
 .white {
   color: #FFFFFF;
@@ -312,6 +315,7 @@ input {
 }
 .closeBtn:hover {
   cursor: pointer;
+  background-color: #FF5A45;
 }
 .closeX {
   color: #000000;
