@@ -15,8 +15,7 @@ font-family: 'Alegreya Sans', sans-serif; */
   vertical-align: middle;
   font-size: 2px;
 }
-
-h3, h4 {
+h1, h3, h4 {
   line-height: 1;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -134,7 +133,14 @@ input {
 .bigFont {
   font-size: 20px;
 }
+.header {
+  text-align: center;
+}
+.loginBtns:hover {
+  cursor: pointer;
+}
 .logo {
+  margin: 0 auto;
   text-align: center;
   font-family: 'Dosis', sans-serif;
   font-size: 40px;
@@ -292,6 +298,23 @@ input {
   vertical-align: middle;
   text-align: center;
 }
+/* .loginForm {
+  height: 40px;
+  margin: 0 auto;
+  vertical-align: middle;
+  text-align: center;
+}
+.loginModel {
+  margin: 0 auto;
+  text-align: center;
+  width: 400px;
+  height: 50px;
+  background: rgba(100, 100, 100, .7);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  padding-top: 25%;
+} */
 .textField {
   margin-top: 10px;
   border-radius: 9px;
@@ -340,4 +363,8 @@ input {
 }
 .upVoteBtn:hover {
   cursor: pointer;
+}
+
+.loginSignup {
+  display: inline-block;
 }

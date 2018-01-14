@@ -13,6 +13,9 @@ app.controller('MainController', ['$http', function($http) {
 	this.category = 0;
 	this.viewAnswersModal = false
 	this.currentquestion = false;
+	this.loginForm = false;
+	this.signUpForm = false;
+	this.loggedIn = false;
 	// this.showQuestion = 0;
 	this.url = 'http://localhost:3000';
 	this.user = {};
@@ -156,6 +159,22 @@ this.viewAnswers = (question) => {
 		this.formData = null;
 	}
 
+	this.openLoginForm = () => {
+		if (this.loginForm == false) {
+			this.loginForm = true;
+		} else {
+			this.loginForm = false;
+		}
+	}
+
+	this.openSignUpForm = () => {
+		if (this.signUpForm == false) {
+			this.signUpForm = true;
+		} else {
+			this.signUpForm = false;
+		}
+	}
+
 
 //Authentication--------------
 this.login = (userPass) => {
@@ -167,6 +186,7 @@ this.login = (userPass) => {
  }).then(response => {
 	 console.log(response);
 	 this.user = response.data.user;
+	 this.loggedIn = true;
 	 localStorage.setItem("token", JSON.stringify(response.data.token));
  });
 };
@@ -180,6 +200,7 @@ this.login = (userPass) => {
 //  }).then(response => {
 // 	 console.log(response);
 // 	 this.user = response.data.user;
+// 	 this.loggedIn = true;
 //  });
 // };
 
@@ -203,6 +224,7 @@ this.getUsers = () => {
 this.logout = () => {
 localStorage.clear('token');
 location.reload();
+this.loggedIn = false;
 }
 //END Authentication----------------
 

@@ -13,25 +13,50 @@
 	<title></title>
 </head>
 <body ng-controller='MainController as ctrl'>
-	<h1 class="logo"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</h1>
+
+	<div class="header">
+		<h1 class="logo"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</h1>
+
+		<!-- authentication -->
+		<div class="loginSignup">
+			<p><span class="green loginBtns" ng-click="ctrl.openSignUpForm()">SignUp</span> | <span class="blue loginBtns" ng-if="ctrl.loggedIn == false"  ng-click="ctrl.openLoginForm()">Login</span>
+			<span class="red loginBtns" ng-if="ctrl.loggedIn == true" ng-click="ctrl.logout()"> Log Out</span></p>
+		  <!-- <p>Logged in username: {{ ctrl.user.username }}</p>
+		  <h4 ng-click="ctrl.getUsers()">Click to see secret stuff</h4>
+		  <div> {{ ctrl.error}} </div>
+
+		  <div ng-repeat="user in ctrl.users">
+		    <h1>{{ user.username }}</h1>
+		  </div> -->
+		</div>
+	</div>
+
+<!-- LOGIN FORM -->
+	<div ng-if="ctrl.loginForm == true" class="ansFormModel">
+		<h1 class="white">Login</h1>
+		<form class="submitAnsForm" ng-submit="ctrl.login(userPass)">
+			<input class="textField" type="text" ng-model="userPass.username" placeholder="username" required/>
+			<input class="textField" type="password" ng-model="userPass.password" placeholder="password" required/>
+			<input class="submitBtn" type="submit"/>
+		</form>
+		<button class="closeBtn" ng-click="ctrl.openLoginForm()">Just Kidding</button>
+	</div>
+
+	<!-- SIGNUP FORM -->
+	<div ng-if="ctrl.signUpForm == true" class="ansFormModel">
+		<h1 class="white">SignUp</h1>
+		<form class="submitAnsForm" ng-submit="ctrl.login(userPass)">
+			<input class="textField" type="text" ng-model="userPass.username" placeholder="username" required/>
+			<input class="textField" type="password" ng-model="userPass.password" placeholder="password" required/>
+			<input class="submitBtn" type="submit"/>
+		</form>
+		<button class="closeBtn" ng-click="ctrl.openSignUpForm()">Just Kidding</button>
+	</div>
+
 	<p class="intro"><span class="bigFont">Welcome to <span class="dosis"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</span></span><br> The objective is to answer whichever questions you choose with the funniest answer you can think of. You can also vote on your favorite answers submitted by other users!</p>
 
-<!-- authentication -->
-	<form ng-submit="ctrl.login(userPass)">
-      <input type="text" ng-model="userPass.username" placeholder="username"/>
-      <input type="password" ng-model="userPass.password" placeholder="password"/>
-      <input type="submit"/>
-  </form>
 
-  <a href="#" ng-click="ctrl.logout()"> Log Out</a>
 
-  <p>Logged in username: {{ ctrl.user.username }}</p>
-  <h4 ng-click="ctrl.getUsers()">Click to see secret stuff</h4>
-  <div> {{ ctrl.error}} </div>
-
-  <div ng-repeat="user in ctrl.users">
-    <h1>{{ user.username }}</h1>
-  </div>
 
 
 	<div class="categoryFlex">
