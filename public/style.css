@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans|Dosis|Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans|Dosis|Source+Sans+Pro:600');
 
 /* font-family: 'Dosis', sans-serif;
 font-family: 'Source Sans Pro', sans-serif;
@@ -9,7 +9,14 @@ font-family: 'Alegreya Sans', sans-serif; */
 /*green: #66F48B  */
 /*blue: #64EFE5  */
 
-h3 {
+.material-icons {
+  /* margin-bottom: 1px; */
+  padding-bottom: 4px;
+  vertical-align: middle;
+  font-size: 2px;
+}
+
+h3, h4 {
   line-height: 1;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -24,6 +31,8 @@ button {
   border: none;
   /* display: block; */
   -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
 }
 button:active {
   box-shadow: none;
@@ -34,11 +43,16 @@ input {
   font-size: 12px;
   border: none;
   -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
 }
 
 .white {
   color: #FFFFFF;
 }
+/* .black {
+  color: #000000;
+} */
 .red {
   color: #FF7B6A;
 }
@@ -178,7 +192,6 @@ input {
   height: 210px;
   background: rgba(64, 237, 110, .7);
   /* padding: 5px; */
-
   position: fixed;
   z-index: 10;
   bottom: 0;
@@ -194,6 +207,7 @@ input {
   /* border: 1px solid brown; */
   max-height: 160px;
   overflow-y: scroll;
+  border-bottom: 1px solid #FFFFFF;
 }
 .ansModelHeader {
   border-bottom: 1px solid #FFFFFF;
@@ -270,7 +284,7 @@ input {
 .submitAnsForm {
   /* border: 1px solid brown; */
   height: 40px;
-  width: 300px;
+  /* width: 400px; */
   margin: 0 auto;
   vertical-align: middle;
   text-align: center;
@@ -294,8 +308,15 @@ input {
   margin-bottom: 2px;
   border-radius: 9px;
   background-color: #FF7B6A;
+  display: inline-block;
 }
 .closeBtn:hover {
+  cursor: pointer;
+}
+.closeX {
+  color: #000000;
+}
+.closeX:hover {
   cursor: pointer;
 }
 .ansBox {
