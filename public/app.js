@@ -144,7 +144,7 @@ this.viewAnswers = (question) => {
 		});
 
 		let index = this.findanswer.findIndex(i => i.id === answerid);
-	
+
 		this.findanswer[index].upvote += 1;
 	}
 
@@ -155,11 +155,3 @@ this.viewAnswers = (question) => {
 
 
 }]);
-// Modal------------------
-//
-// $( () => {
-// 	const $viewAnswers = $('#viewAnswersBtn');
-// 	$viewAnswers.on('click', () => {
-// 		$('#viewAnswersModal').css('display', 'block')
-// });
-// });
