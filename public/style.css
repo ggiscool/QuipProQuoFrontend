@@ -22,6 +22,8 @@ button {
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 12px;
   border: none;
+  /* display: block; */
+  -webkit-appearance: none;
 }
 button:active {
   box-shadow: none;
@@ -31,6 +33,7 @@ input {
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 12px;
   border: none;
+  -webkit-appearance: none;
 }
 
 .white {
@@ -111,11 +114,20 @@ input {
   border: 5px solid #64EFE5;
   padding: 0;
 }
+.bigFont {
+  font-size: 20px;
+}
 .logo {
   text-align: center;
   font-family: 'Dosis', sans-serif;
   font-size: 40px;
   line-height: 1;
+}
+.intro {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 400px;
+  margin-bottom: 10px;
 }
 .categoryCard {
   text-align: center;
@@ -146,8 +158,8 @@ input {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  border-top: 5px solid grey;
-  border-bottom: 5px solid grey;
+  border-top: 5px solid #999999;
+  border-bottom: 5px solid #999999;
   padding: 10px 0 10px 0;
 }
 
@@ -163,9 +175,40 @@ input {
 .viewAnswersModal {
   text-align: center;
   width: 100%;
-  background: rgba(100, 100, 100, .5);
-  min-height: 200px;
-  padding: 10px;
+  height: 210px;
+  background: rgba(64, 237, 110, .7);
+  /* padding: 5px; */
+
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  color: #FFFFFF;
+}
+/* .viewAnswersModal > h3 { */
+  /* border-bottom: 1px solid #FFFFFF;
+  margin: 0;
+  background: rgba(64, 237, 110, .5);
+  padding-top: 5px; */
+/* } */
+.ansScroll {
+  /* border: 1px solid brown; */
+  max-height: 160px;
+  overflow-y: scroll;
+}
+.ansModelHeader {
+  border-bottom: 1px solid #FFFFFF;
+  margin: 0;
+  background: rgba(64, 237, 110, .5);
+  padding-top: 5px;
+}
+.ansModelHeader > h3 {
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+.answersModalSpacingBox {
+  width: 100%;
+  height: 200px;
+  /* background: black; */
 }
 .viewAnswersBtn {
   -webkit-appearance: none;
@@ -248,7 +291,7 @@ input {
   background-color: #40ED6E;
 }
 .closeBtn {
-  margin-top: 5px;
+  margin-bottom: 2px;
   border-radius: 9px;
   background-color: #FF7B6A;
 }
@@ -265,5 +308,11 @@ input {
 }
 .upVoteBtn {
   margin-left: 5px;
-  background: #91F7EF;
+  color: black;
+  /* background: #FFAB6A; */
+  /* background: #91F7EF; */
+  /* border-radius: 8px; */
+}
+.upVoteBtn:hover {
+  cursor: pointer;
 }

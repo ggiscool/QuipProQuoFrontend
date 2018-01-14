@@ -2,6 +2,7 @@
 <html ng-app='QuipProQuo'>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script
 	 src="https://code.jquery.com/jquery-3.2.1.min.js"
 	 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -12,6 +13,7 @@
 </head>
 <body ng-controller='MainController as ctrl'>
 	<h1 class="logo"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</h1>
+	<p class="intro"><span class="bigFont">Welcome to <span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</span><br> The objective is to answer whichever questions you choose with the funniest answer you can think of. You can also vote on your favorite answers submitted by other users!</p>
 
 	<div class="categoryFlex">
 		<div class="categoryCard bgRed" ng-click='ctrl.category1()'>
@@ -73,12 +75,22 @@
 
 
 	<div class="viewAnswersModal" ng-if="ctrl.viewAnswersModal == true">
-		<h3>Submitted Answers</h3>
-			<!-- <div class="ansBox"> -->
+		<div class="ansModelHeader">
+
+			<h3>Submitted Answers</h3>
+			<button class="closeBtn" ng-click="ctrl.viewAnswers(question.id)">X</button>
+		</div>
+
+
+			<div class="ansScroll">
 				<div class="ansBox" ng-repeat="answer in ctrl.findanswer | orderBy: '-upvote'">
-					<p><span class="white">{{ answer.username }}</span>:</p> <p>{{ answer.content }}</p>  <p class="white">{{ answer.upvote }} <button class="upVoteBtn" ng-click='ctrl.upvote(answer.id)'>Upvote</button></p>
+					<p>{{ answer.username }}:</p> <p>{{ answer.content }}</p>  <p>{{ answer.upvote }}
+						<i class="material-icons upVoteBtn" ng-click='ctrl.upvote(answer.id)'>sentiment_very_satisfied</i>
+					</p>
 				</div>
-			<!-- </div> -->
+			</div>
+	</div>
+	<div class="answersModalSpacingBox" ng-if="ctrl.viewAnswersModal == true">
 	</div>
 
 	<div class="ansFormModel" ng-if='ctrl.display == true'>
