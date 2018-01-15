@@ -125,7 +125,8 @@ app.controller('MainController', ['$http', function($http) {
 
 	this.pickQuestion = (question) => {
 
-		this.questionID = question;
+		this.questionID = question.id;
+		this.questionTitle = question.title;
 
 		if (this.currentquestion == true) {
 
