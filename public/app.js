@@ -21,6 +21,7 @@ app.controller('MainController', ['$http', function($http) {
 	this.user = {};
 
 
+
 // Get categories
 	$http({
 		method: 'GET',
@@ -43,7 +44,9 @@ app.controller('MainController', ['$http', function($http) {
 		console.log('Reject: ', reject);
 	});
 
+
 	this.addanswer = () => {
+
 
 		$http({
 			method: 'POST',
@@ -188,6 +191,7 @@ this.login = (userPass) => {
 	 this.user = response.data.user;
 	 this.loggedIn = true;
 	 localStorage.setItem("token", JSON.stringify(response.data.token));
+	 this.formData = {username: this.user.username}
  });
 };
 
@@ -201,6 +205,7 @@ this.createUser = (userPass) => {
 	 console.log(response);
 	 this.user = response.data.user;
 	 this.loggedIn = true;
+	 this.formData = {username: this.user.username}
  });
 };
 
