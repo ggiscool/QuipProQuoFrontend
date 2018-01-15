@@ -21,13 +21,13 @@
 		<div class="loginSignup">
 			<p><span class="green loginBtns" ng-click="ctrl.openSignUpForm()">SignUp</span> | <span class="blue loginBtns" ng-if="ctrl.loggedIn == false"  ng-click="ctrl.openLoginForm()">Login</span>
 			<span class="red loginBtns" ng-if="ctrl.loggedIn == true" ng-click="ctrl.logout()"> Log Out</span></p>
-		  <!-- <p>Logged in username: {{ ctrl.user.username }}</p>
+		  <p ng-if="ctrl.loggedIn == true">Logged in username: {{ ctrl.user.username }}</p>
 		  <h4 ng-click="ctrl.getUsers()">Click to see secret stuff</h4>
 		  <div> {{ ctrl.error}} </div>
 
 		  <div ng-repeat="user in ctrl.users">
 		    <h1>{{ user.username }}</h1>
-		  </div> -->
+		  </div>
 		</div>
 	</div>
 
