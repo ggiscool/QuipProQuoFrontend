@@ -10,7 +10,6 @@ font-family: 'Alegreya Sans', sans-serif; */
 /*blue: #64EFE5  */
 
 .material-icons {
-  /* margin-bottom: 1px; */
   padding-bottom: 4px;
   vertical-align: middle;
   font-size: 2px;
@@ -20,15 +19,12 @@ h1, h3, h4 {
   font-family: 'Source Sans Pro', sans-serif;
 }
 p {
-  /* line-height: 1;
-  margin: 0; */
   font-family: 'Source Sans Pro', sans-serif;
 }
 button {
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 12px;
   border: none;
-  /* display: block; */
   -webkit-appearance: none;
   -moz-appearance:    none;
   appearance:         none;
@@ -52,9 +48,7 @@ input {
 .white {
   color: #FFFFFF;
 }
-/* .black {
-  color: #000000;
-} */
+
 .red {
   color: #FF7B6A;
 }
@@ -100,12 +94,7 @@ input {
 .green {
   color: #66F48B;
 }
-/* .lightGreen {
-  color: #92FAAD;
-}
-.darkGreen {
-  color: #1CE050;
-} */
+
 .bgGreen {
   background: #66F48B;
 }
@@ -195,7 +184,6 @@ input {
 }
 .header {
   padding: 0 5px 0 5px;
-  /* border: 1px solid brown; */
   margin: 0 auto;
   width: 98%;
   display: flex;
@@ -209,7 +197,6 @@ input {
 }
 .welcomeUser {
   margin: 2px;
-  /* border: 1px solid purple; */
   min-width: 90px;
 }
 .loginBtns:hover {
@@ -256,14 +243,11 @@ input {
   margin: 5px 0 0 0;
 }
 
-
 .categoryFlex {
   margin: 0 auto;
-  width: 700px;
+  max-width: 700px;
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
-  /* justify-content: space-between; */
   border-top: 5px solid #999999;
   border-bottom: 5px solid #999999;
   padding: 10px 0 10px 0;
@@ -284,20 +268,12 @@ input {
   width: 100%;
   height: 210px;
   background: rgba(64, 237, 110, .7);
-  /* padding: 5px; */
   position: fixed;
   z-index: 10;
   bottom: 0;
   color: #FFFFFF;
 }
-/* .viewAnswersModal > h3 { */
-  /* border-bottom: 1px solid #FFFFFF;
-  margin: 0;
-  background: rgba(64, 237, 110, .5);
-  padding-top: 5px; */
-/* } */
 .ansScroll {
-  /* border: 1px solid brown; */
   max-height: 160px;
   overflow-y: scroll;
   border-bottom: 1px solid #FFFFFF;
@@ -315,7 +291,6 @@ input {
 .answersModalSpacingBox {
   width: 100%;
   height: 200px;
-  /* background: black; */
 }
 .viewAnswersBtn {
   -webkit-appearance: none;
@@ -330,7 +305,6 @@ input {
 .viewAnswersBtn:hover {
   border: 2px solid #92FAAD;
   cursor: pointer;
-  /* width: 83px; */
 }
 .answerButton {
   -webkit-appearance: none;
@@ -375,30 +349,11 @@ input {
   color: #FFFFFF;
 }
 .submitAnsForm {
-  /* border: 1px solid brown; */
-  height: 40px;
-  /* width: 400px; */
-  margin: 0 auto;
-  vertical-align: middle;
-  text-align: center;
-}
-/* .loginForm {
   height: 40px;
   margin: 0 auto;
   vertical-align: middle;
   text-align: center;
 }
-.loginModel {
-  margin: 0 auto;
-  text-align: center;
-  width: 400px;
-  height: 50px;
-  background: rgba(100, 100, 100, .7);
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  padding-top: 25%;
-} */
 .textField {
   margin-top: 10px;
   border-radius: 9px;
@@ -441,9 +396,6 @@ input {
 .upVoteBtn {
   margin-left: 5px;
   color: black;
-  /* background: #FFAB6A; */
-  /* background: #91F7EF; */
-  /* border-radius: 8px; */
 }
 .upVoteBtn:hover {
   cursor: pointer;
