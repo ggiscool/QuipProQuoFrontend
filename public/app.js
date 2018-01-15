@@ -19,6 +19,7 @@ app.controller('MainController', ['$http', function($http) {
 	// this.showQuestion = 0;
 	this.url = 'http://localhost:3000';
 	this.user = {};
+	this.err = '';
 
 
 
@@ -163,6 +164,9 @@ this.viewAnswers = (question) => {
 	}
 
 	this.openLoginForm = () => {
+
+		this.err = '';
+
 		if (this.loginForm == false) {
 			this.loginForm = true;
 		} else {
@@ -171,6 +175,9 @@ this.viewAnswers = (question) => {
 	}
 
 	this.openSignUpForm = () => {
+
+		this.err = '';
+
 		if (this.signUpForm == false) {
 			this.signUpForm = true;
 		} else {
@@ -181,6 +188,7 @@ this.viewAnswers = (question) => {
 
 //Authentication--------------
 this.login = (userPass) => {
+
 	console.log(userPass);
 	$http({
 	 method: 'POST',
@@ -188,14 +196,27 @@ this.login = (userPass) => {
 	 data: { user: { username: userPass.username, password: userPass.password }},
  }).then(response => {
 	 console.log(response.data);
-	 this.user = response.data.user;
-	 this.loggedIn = true;
-	 localStorage.setItem("token", JSON.stringify(response.data.token));
-	 this.formData = {username: this.user.username}
+	 console.log(response.data.status);
+
+	 if (response.data.status == 200) {
+
+		 this.user = response.data.user;
+		 this.loggedIn = true;
+		 localStorage.setItem("token", JSON.stringify(response.data.token));
+		 this.formData = {username: this.user.username}
+		 this.openLoginForm();
+	}
+
+	else {
+
+		this.err = 'Unable to login';
+	}
  });
+
 };
 
 this.createUser = (userPass) => {
+
 	console.log(userPass);
 	$http({
 	 method: 'POST',
@@ -206,7 +227,18 @@ this.createUser = (userPass) => {
 	 this.user = response.data.user;
 	 this.loggedIn = true;
 	 this.formData = {username: this.user.username}
- });
+ }).catch(reject => {
+			console.log('Reject: ', reject);
+			if (reject.status == 500) {
+
+				this.err = 'Unable to register';
+			}
+
+			else {
+
+				this.openSignUpForm();
+			}
+	});
 };
 
 this.getUsers = () => {

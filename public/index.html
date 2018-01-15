@@ -22,8 +22,6 @@
 			<p><span class="green loginBtns" ng-click="ctrl.openSignUpForm()">SignUp</span> | <span class="blue loginBtns" ng-if="ctrl.loggedIn == false"  ng-click="ctrl.openLoginForm()">Login</span>
 			<span class="red loginBtns" ng-if="ctrl.loggedIn == true" ng-click="ctrl.logout()"> Log Out</span></p>
 		  <p ng-if="ctrl.loggedIn == true">Logged in username: {{ ctrl.user.username }}</p>
-		  <h4 ng-click="ctrl.getUsers()">Click to see secret stuff</h4>
-		  <div> {{ ctrl.error}} </div>
 
 		  <div ng-repeat="user in ctrl.users">
 		    <h1>{{ user.username }}</h1>
@@ -34,6 +32,7 @@
 <!-- LOGIN FORM -->
 	<div ng-if="ctrl.loginForm == true" class="ansFormModel">
 		<h1 class="white">Login</h1>
+		<p class='red'>{{ ctrl.err }}</p>
 		<form class="submitAnsForm" ng-submit="ctrl.login(userPass)">
 			<input class="textField" type="text" ng-model="userPass.username" placeholder=" username" required/>
 			<input class="textField" type="password" ng-model="userPass.password" placeholder=" password" required/>
@@ -45,6 +44,7 @@
 	<!-- SIGNUP FORM -->
 	<div ng-if="ctrl.signUpForm == true" class="ansFormModel">
 		<h1 class="white">SignUp</h1>
+		<p class='red'>{{ ctrl.err }}</p>
 		<form class="submitAnsForm" ng-submit="ctrl.createUser(userPass)">
 			<input class="textField" type="text" ng-model="userPass.username" placeholder=" username" required/>
 			<input class="textField" type="password" ng-model="userPass.password" placeholder=" password" required/>
@@ -82,7 +82,7 @@
 				</div>
 			</div>
 			<div class="buttonBox bgLightRedNH" ng-if='ctrl.questionID == question.id'>
-				<button class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
+				<button ng-if='ctrl.loggedIn == true' class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
 				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
 			</div>
 		</div>
@@ -96,7 +96,7 @@
 				</div>
 			</div>
 			<div class="buttonBox bgLightOrangeNH" ng-if='ctrl.questionID == question.id'>
-				<button class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
+				<button ng-if='ctrl.loggedIn == true' class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
 				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
 			</div>
 		</div>
@@ -109,7 +109,7 @@
 				</div>
 			</div>
 			<div class="buttonBox bgLightBlueNH" ng-if='ctrl.questionID == question.id'>
-				<button class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
+				<button ng-if='ctrl.loggedIn == true' class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
 				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
 			</div>
 		</div>
