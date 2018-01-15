@@ -195,13 +195,17 @@ input {
 }
 .header {
   padding: 0 5px 0 5px;
-  border: 1px solid brown;
+  /* border: 1px solid brown; */
   margin: 0 auto;
-  max-width: 900px;
+  width: 98%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  background: rgba(255,255,255,.9);
 }
 .welcomeUser {
   margin: 2px;

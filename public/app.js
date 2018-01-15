@@ -58,6 +58,7 @@ app.controller('MainController', ['$http', function($http) {
 			this.formData = {};
 			this.answer = response.data;
 			this.findanswer.push(this.answer);
+			this.formData = {username: this.user.username}
 
 		}).catch(reject => {
 			console.log('Reject: ', reject);
