@@ -45,7 +45,7 @@
 	<!-- SIGNUP FORM -->
 	<div ng-if="ctrl.signUpForm == true" class="ansFormModel">
 		<h1 class="white">SignUp</h1>
-		<form class="submitAnsForm" ng-submit="ctrl.login(userPass)">
+		<form class="submitAnsForm" ng-submit="ctrl.createUser(userPass)">
 			<input class="textField" type="text" ng-model="userPass.username" placeholder=" username" required/>
 			<input class="textField" type="password" ng-model="userPass.password" placeholder=" password" required/>
 			<input class="submitBtn" type="submit"/>

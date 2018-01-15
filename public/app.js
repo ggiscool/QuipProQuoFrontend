@@ -184,25 +184,25 @@ this.login = (userPass) => {
 	 url: this.url + '/users/login',
 	 data: { user: { username: userPass.username, password: userPass.password }},
  }).then(response => {
-	 console.log(response);
-	 this.user = response.data.user;
+	 console.log(response.data);
+	 this.user = response.data.username;
 	 this.loggedIn = true;
 	 localStorage.setItem("token", JSON.stringify(response.data.token));
  });
 };
 
-// this.createUser = (userPass) => {
-// 	console.log(userPass);
-// 	$http({
-// 	 method: 'POST',
-// 	 url: this.url + '/users',
-// 	 data: { user: { username: userPass.username, password: userPass.password }},
-//  }).then(response => {
-// 	 console.log(response);
-// 	 this.user = response.data.user;
-// 	 this.loggedIn = true;
-//  });
-// };
+this.createUser = (userPass) => {
+	console.log(userPass);
+	$http({
+	 method: 'POST',
+	 url: this.url + '/users',
+	 data: { user: { username: userPass.username, password: userPass.password }},
+ }).then(response => {
+	 console.log(response);
+	 this.user = response.data.user;
+	 this.loggedIn = true;
+ });
+};
 
 this.getUsers = () => {
  $http({
