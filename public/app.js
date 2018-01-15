@@ -101,6 +101,27 @@ app.controller('MainController', ['$http', function($http) {
 		this.questionID = 0;
 	}
 
+	this.category4 = () => {
+
+		this.category = 4;
+		this.viewAnswersModal = false;
+		this.questionID = 0;
+	}
+
+	this.category5 = () => {
+
+		this.category = 5;
+		this.viewAnswersModal = false;
+		this.questionID = 0;
+	}
+
+	this.category6 = () => {
+
+		this.category = 6;
+		this.viewAnswersModal = false;
+		this.questionID = 0;
+	}
+
 	this.pickQuestion = (question) => {
 
 		this.questionID = question;

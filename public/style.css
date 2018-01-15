@@ -68,13 +68,14 @@ input {
 .bgLightRed {
   background: #FFA296;
 }
-.bgLightRedNH {
-  background: #FFA296;
-}
 .bgLightRed:hover {
   border: 5px solid #FF7B6A;
   padding: 0;
 }
+.bgLightRedNH {
+  background: #FFA296;
+}
+
 .orange {
   color: #FFAB6A;
 }
@@ -95,6 +96,7 @@ input {
   border: 5px solid #FFAB6A;
   padding: 0;
 }
+
 .green {
   color: #66F48B;
 }
@@ -104,9 +106,24 @@ input {
 .darkGreen {
   color: #1CE050;
 } */
+.bgGreen {
+  background: #66F48B;
+}
+.bgGreen:hover {
+  border: 5px solid #1CE050;
+  padding: 0;
+}
 .bgLightGreen {
   background: #92FAAD;
 }
+.bgLightGreen:hover {
+  border: 5px solid #66F48B;
+  padding: 0;
+}
+.bgLightGreenNH {
+  background: #92FAAD;
+}
+
 .blue {
   color: #64EFE5;
 }
@@ -130,11 +147,66 @@ input {
   border: 5px solid #64EFE5;
   padding: 0;
 }
+
+.purple {
+  color: #BC6DF1;
+}
+.bgPurple {
+  background: #BC6DF1;
+}
+.bgPurple:hover {
+  border: 5px solid #8F26D7;
+  padding: 0;
+}
+.bgLightPurple {
+  background: #D198F8;
+}
+.bgLightPurple:hover {
+  border: 5px solid #BC6DF1;
+  padding: 0;
+}
+.bgLightPurpleNH {
+  background: #D198F8;
+}
+
+.pink {
+  color: #F667C1;
+}
+.bgPink {
+  background: #F667C1;
+}
+.bgPink:hover {
+  border: 5px solid #EF41AE;
+  padding: 0;
+}
+.bgLightPink {
+  background: #FA93D4;
+}
+.bgLightPink:hover {
+  border: 5px solid #F667C1;
+  padding: 0;
+}
+.bgLightPinkNH {
+  background: #FA93D4;
+}
+
 .bigFont {
   font-size: 20px;
 }
 .header {
+  padding: 0 5px 0 5px;
+  border: 1px solid brown;
+  margin: 0 auto;
+  max-width: 900px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   text-align: center;
+}
+.welcomeUser {
+  margin: 2px;
+  /* border: 1px solid purple; */
+  min-width: 90px;
 }
 .loginBtns:hover {
   cursor: pointer;
@@ -148,19 +220,21 @@ input {
 }
 .intro {
   margin: 0 auto;
+  margin-top: 100px;
   text-align: center;
-  max-width: 400px;
+  max-width: 600px;
   margin-bottom: 10px;
 }
 .categoryCard {
   text-align: center;
-  width: 200px;
+  min-width: 200px;
   height: 200px;
   border-radius: 10px;
   cursor: pointer;
   padding: 1px;
   box-sizing: border-box;
   font-family: 'Dosis', sans-serif;
+  margin-right: 5px;
 
 }
 .questionCard {
@@ -173,17 +247,23 @@ input {
   box-sizing: border-box;
   margin: 10px 5px 0px 5px;
 }
+.questionCard > h3 {
+  font-size: 15px;
+  margin: 5px 0 0 0;
+}
+
 
 .categoryFlex {
   margin: 0 auto;
-  max-width: 700px;
+  width: 700px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
   border-top: 5px solid #999999;
   border-bottom: 5px solid #999999;
   padding: 10px 0 10px 0;
+  overflow-x: scroll;
 }
 
 .questionFlex {

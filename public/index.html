@@ -15,18 +15,20 @@
 <body ng-controller='MainController as ctrl'>
 
 	<div class="header">
-		<h1 class="logo"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</h1>
-
 		<!-- authentication -->
 		<div class="loginSignup">
 			<p><span class="green loginBtns" ng-click="ctrl.openSignUpForm()">SignUp</span> | <span class="blue loginBtns" ng-if="ctrl.loggedIn == false"  ng-click="ctrl.openLoginForm()">Login</span>
 			<span class="red loginBtns" ng-if="ctrl.loggedIn == true" ng-click="ctrl.logout()"> Log Out</span></p>
-		  <p ng-if="ctrl.loggedIn == true">Logged in username: {{ ctrl.user.username }}</p>
 
-		  <div ng-repeat="user in ctrl.users">
-		    <h1>{{ user.username }}</h1>
-		  </div>
 		</div>
+
+		<h1 class="logo"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</h1>
+
+		<div class="welcomeUser">
+			<p ng-if="ctrl.loggedIn == true">Welcome: <span class="purple">{{ ctrl.user.username }}!</span></p>
+		</div>
+
+
 	</div>
 
 <!-- LOGIN FORM -->
@@ -71,6 +73,18 @@
 		<div class="categoryCard bgBlue" ng-click='ctrl.category3()'>
 			<h1>Food</h1>
 		</div>
+
+		<div class="categoryCard bgGreen" ng-click='ctrl.category4()'>
+			<h1>Music</h1>
+		</div>
+
+		<div class="categoryCard bgPurple" ng-click='ctrl.category5()'>
+			<h1>Science</h1>
+		</div>
+
+		<div class="categoryCard bgPink" ng-click='ctrl.category6()'>
+			<h1>Pop Culture</h1>
+		</div>
 	</div>
 
 	<div class="questionFlex">
@@ -109,6 +123,45 @@
 				</div>
 			</div>
 			<div class="buttonBox bgLightBlueNH" ng-if='ctrl.questionID == question.id'>
+				<button ng-if='ctrl.loggedIn == true' class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
+				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
+			</div>
+		</div>
+
+		<div ng-if='ctrl.category == 4' ng-repeat="question in ctrl.questions">
+			<div class="questionCard bgLightGreen" ng-if="question.category_id==4" ng-click='ctrl.pickQuestion(question.id)'>
+					<h3>{{question.title}}</h3>
+				<div ng-if='ctrl.questionID == question.id'>
+					<p>{{question.content}}</p> <br>
+				</div>
+			</div>
+			<div class="buttonBox bgLightGreenNH" ng-if='ctrl.questionID == question.id'>
+				<button ng-if='ctrl.loggedIn == true' class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
+				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
+			</div>
+		</div>
+
+		<div ng-if='ctrl.category == 5' ng-repeat="question in ctrl.questions">
+			<div class="questionCard bgLightPurple" ng-if="question.category_id==5" ng-click='ctrl.pickQuestion(question.id)'>
+					<h3>{{question.title}}</h3>
+				<div ng-if='ctrl.questionID == question.id'>
+					<p>{{question.content}}</p> <br>
+				</div>
+			</div>
+			<div class="buttonBox bgLightPurpleNH" ng-if='ctrl.questionID == question.id'>
+				<button ng-if='ctrl.loggedIn == true' class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
+				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
+			</div>
+		</div>
+
+		<div ng-if='ctrl.category == 6' ng-repeat="question in ctrl.questions">
+			<div class="questionCard bgLightPink" ng-if="question.category_id==6" ng-click='ctrl.pickQuestion(question.id)'>
+					<h3>{{question.title}}</h3>
+				<div ng-if='ctrl.questionID == question.id'>
+					<p>{{question.content}}</p> <br>
+				</div>
+			</div>
+			<div class="buttonBox bgLightPinkNH" ng-if='ctrl.questionID == question.id'>
 				<button ng-if='ctrl.loggedIn == true' class="answerButton" ng-click='ctrl.displayForm(question)'>Answer</button>
 				<button class="viewAnswersBtn" ng-click="ctrl.viewAnswers(question.id)">View Answers</button>
 			</div>
