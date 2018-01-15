@@ -227,17 +227,15 @@ this.createUser = (userPass) => {
 	 this.user = response.data.user;
 	 this.loggedIn = true;
 	 this.formData = {username: this.user.username}
+
+	 if (response.status == 200) {
+
+	 	this.openSignUpForm();
+	 }
  }).catch(reject => {
-			console.log('Reject: ', reject);
-			if (reject.status == 500) {
+		console.log('Reject: ', reject);
 
-				this.err = 'Unable to register';
-			}
-
-			else {
-
-				this.openSignUpForm();
-			}
+		this.err = 'Unable to register';
 	});
 };
 
