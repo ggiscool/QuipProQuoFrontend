@@ -160,7 +160,7 @@ this.viewAnswers = (question) => {
 	}
 
 
-	this.questionID = question;
+	this.questionID = question.id;
 	}
 
 	this.upvote = (answerid) => {
