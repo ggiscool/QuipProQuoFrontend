@@ -62,6 +62,9 @@ app.controller('MainController', ['$http', function($http) {
 		}).catch(reject => {
 			console.log('Reject: ', reject);
 		});
+
+		this.formData = {username: this.user.username}
+		
 		this.closeModel();
 	};
 
