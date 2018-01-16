@@ -55,7 +55,7 @@
 		<button class="closeBtn" ng-click="ctrl.openSignUpForm()">Just Kidding</button>
 	</div>
 
-	<p class="intro"><span class="bigFont">Welcome to <span class="dosis"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</span></span><br> The objective is to answer whichever questions you choose with the funniest answer you can think of. You can also vote on your favorite answers submitted by other users! <br> <span class="pink">To Answer Questions Please Login</span></p>
+	<p class="intro"><span class="bigFont">Welcome to <span class="dosis"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</span></span><br> The objective is to answer whichever questions you choose with the funniest answer you can think of. You can also vote on your favorite answers submitted by other users! <br> <span ng-click='ctrl.openLoginForm()' ng-if='ctrl.loggedIn == false' class="pink">To Answer Questions Please Login</span></p>
 
 
 
