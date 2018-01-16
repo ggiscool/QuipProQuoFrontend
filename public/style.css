@@ -41,6 +41,9 @@ input {
   -moz-appearance:    none;
   appearance:         none;
 }
+.clickable:hover {
+  cursor: pointer;
+}
 .dosis {
   font-family: 'Dosis', sans-serif;
 }
