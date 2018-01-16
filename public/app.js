@@ -26,8 +26,8 @@ app.controller('MainController', ['$http', function($http) {
 // Get categories
 	$http({
 		method: 'GET',
-		// url: this.herokuUrl + '/categories'
-		url: this.url + '/categories'
+		url: this.herokuUrl + '/categories'
+		// url: this.url + '/categories'
 	}).then(response => {
 		console.log('Response: ', response);
 		this.categories = response.data;
@@ -38,8 +38,8 @@ app.controller('MainController', ['$http', function($http) {
 // Get Questions
 	$http({
 		method: 'GET',
-		// url: this.herokuUrl + '/categories/1/questions'
-		url: this.url + '/categories/1/questions'
+		url: this.herokuUrl + '/categories/1/questions'
+		// url: this.url + '/categories/1/questions'
 	}).then(response => {
 		console.log('Response: ', response);
 		this.questions = response.data;
@@ -53,8 +53,8 @@ app.controller('MainController', ['$http', function($http) {
 
 		$http({
 			method: 'POST',
-			// url: this.herokuUrl + '/categories/1/questions/' + this.questionID + '/answers',
-			url: this.url + '/categories/1/questions/' + this.questionID + '/answers',
+			url: this.herokuUrl + '/categories/1/questions/' + this.questionID + '/answers',
+			// url: this.url + '/categories/1/questions/' + this.questionID + '/answers',
 			data: this.formData
 		}).then(response => {
 			console.log('Response ', response.data);
@@ -145,8 +145,8 @@ this.viewAnswers = (question) => {
 
 	$http({
 		method: 'GET',
-		// url: this.herokuUrl + '/categories/1/questions/' + this.questionID + '/answers',
-		url: this.url + '/categories/1/questions/' + this.questionID + '/answers',
+		url: this.herokuUrl + '/categories/1/questions/' + this.questionID + '/answers',
+		// url: this.url + '/categories/1/questions/' + this.questionID + '/answers',
 	}).then(response => {
 		console.log('Response: ', response);
 		this.findanswer = response.data;
@@ -178,8 +178,8 @@ this.viewAnswers = (question) => {
 
 		$http({
 			method: 'POST',
-			// url: this.herokuUrl + '/upvotes',
-			url: this.url + '/upvotes',
+			url: this.herokuUrl + '/upvotes',
+			// url: this.url + '/upvotes',
 			data: this.formData
 		}).then(response => {
 			console.log('Response ', response.data);
@@ -193,8 +193,8 @@ this.viewAnswers = (question) => {
 
 			$http({
 				method: 'PUT',
-				// url: this.herokuUrl + '/categories/1/questions/' + this.questionID + '/answers/' + answerid,
-				url: this.url + '/categories/1/questions/' + this.questionID + '/answers/' + answerid,
+				url: this.herokuUrl + '/categories/1/questions/' + this.questionID + '/answers/' + answerid,
+				// url: this.url + '/categories/1/questions/' + this.questionID + '/answers/' + answerid,
 			}).then(response => {
 				console.log('Response: ', response);
 			}).catch(reject => {
@@ -240,8 +240,8 @@ this.login = (userPass) => {
 	console.log(userPass);
 	$http({
 	 method: 'POST',
-	 // url: this.herokuUrl + '/users/login',
-	 url: this.url + '/users/login',
+	 url: this.herokuUrl + '/users/login',
+	 // url: this.url + '/users/login',
 	 data: { user: { username: userPass.username, password: userPass.password }},
  }).then(response => {
 	 console.log(response.data);
@@ -269,8 +269,8 @@ this.createUser = (userPass) => {
 	console.log(userPass);
 	$http({
 	 method: 'POST',
-	 // url: this.herokuUrl + '/users',
-	 url: this.url + '/users',
+	 url: this.herokuUrl + '/users',
+	 // url: this.url + '/users',
 	 data: { user: { username: userPass.username, password: userPass.password }},
  }).then(response => {
 	 console.log(response);
@@ -291,8 +291,8 @@ this.createUser = (userPass) => {
 
 this.getUsers = () => {
  $http({
-	 // url: this.herokuUrl + '/users',
-	 url: this.url + '/users',
+	 url: this.herokuUrl + '/users',
+	 // url: this.url + '/users',
 	 method: 'GET',
 	 headers: {
 		Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
