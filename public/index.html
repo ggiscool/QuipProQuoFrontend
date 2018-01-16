@@ -36,7 +36,7 @@
 		<h1 class="white">Login</h1>
 		<p class='red'>{{ ctrl.err }}</p>
 		<form class="submitAnsForm" ng-submit="ctrl.login(userPass)">
-			<input class="textField" type="text" ng-model="userPass.username" placeholder=" username" required/>
+			<input class="textField" type="text" ng-model="userPass.username" placeholder=" username" required autofocus/>
 			<input class="textField" type="password" ng-model="userPass.password" placeholder=" password" required/>
 			<input class="submitBtn" type="submit"/>
 		</form>
@@ -48,7 +48,7 @@
 		<h1 class="white">SignUp</h1>
 		<p class='red'>{{ ctrl.err }}</p>
 		<form class="submitAnsForm" ng-submit="ctrl.createUser(userPass)">
-			<input class="textField" type="text" ng-model="userPass.username" placeholder=" username" required/>
+			<input class="textField" type="text" ng-model="userPass.username" placeholder=" username" required autofocus/>
 			<input class="textField" type="password" ng-model="userPass.password" placeholder=" password" required/>
 			<input class="submitBtn" type="submit"/>
 		</form>
@@ -196,7 +196,7 @@
 		<p>{{ctrl.questionContent}}</p>
 			<form class="submitAnsForm"  ng-submit='ctrl.addanswer()'>
 				<input type='hidden' ng-model='ctrl.formData.username'>
-				<input class="textField" type='text' placeholder=' Answer' ng-model='ctrl.formData.content' required>
+				<input class="textField" type='text' placeholder=' Answer' ng-model='ctrl.formData.content' required autofocus>
 				<input type='hidden' ng-model='ctrl.formData.upvote'>
 				<input class="submitBtn" type='submit'>
 			</form>
