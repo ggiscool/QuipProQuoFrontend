@@ -16,7 +16,7 @@ app.controller('MainController', ['$http', function($http) {
 	this.signUpForm = false;
 	this.loggedIn = false;
 	this.url = 'http://localhost:3000';
-	this.herokuUrl = 'https://quip-pro-quo.herokuapp.com/';
+	this.herokuUrl = 'https://quip-pro-quo.herokuapp.com';
 	this.user = {};
 	this.err = '';
 
