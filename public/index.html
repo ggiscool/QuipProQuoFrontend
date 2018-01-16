@@ -176,7 +176,12 @@
 
 			<div class="ansScroll">
 				<div class="ansBox" ng-repeat="answer in ctrl.findanswer | orderBy: '-upvote'">
-					<p>{{ answer.username }}:</p> <p>{{ answer.content }}</p>  <p>{{ answer.upvote }}
+					<p>{{ answer.username }}:</p> <p>{{ answer.content }}</p>
+
+					<p ng-if="ctrl.loggedIn == false">{{ answer.upvote }}
+						<i class="material-icons upVoteBtn" ng-click='ctrl.openLoginForm()'>sentiment_very_satisfied</i> <span class="clickable" ng-click='ctrl.openLoginForm()'>Login To Vote</span>
+					</p>
+					 <p ng-if="ctrl.loggedIn == true">{{ answer.upvote }}
 						<i class="material-icons upVoteBtn" ng-click='ctrl.upvote(answer.id)'>sentiment_very_satisfied</i>
 					</p>
 				</div>
