@@ -4,4 +4,4 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.static('public'));
 
-app.listen(port, () => console.log('Quip Pro Quo running on', port));
+app.listen(PORT, () => console.log('Quip Pro Quo running on', PORT));
