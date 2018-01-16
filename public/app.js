@@ -18,6 +18,7 @@ app.controller('MainController', ['$http', function($http) {
 	this.url = 'http://localhost:3000';
 	this.user = {};
 	this.err = '';
+	this.voted = 0;
 
 
 
@@ -165,18 +166,34 @@ this.viewAnswers = (question) => {
 
 		console.log(answerid);
 
+		this.formData = {user_id: this.user.id, answer_id: answerid, vote: 1};
+
 		$http({
-			method: 'PUT',
-			url: 'http://localhost:3000/categories/1/questions/' + this.questionID + '/answers/' + answerid
+			method: 'POST',
+			url: 'http://localhost:3000/upvotes',
+			data: this.formData
 		}).then(response => {
-			console.log('Response: ', response);
+			console.log('Response ', response.data);
+			this.putupvote(answerid);
 		}).catch(reject => {
-				console.log('Reject: ', reject);
+			console.log('Reject: ', reject);
 		});
+	}
 
-		let index = this.findanswer.findIndex(i => i.id === answerid);
+	this.putupvote = (answerid) => {
 
-		this.findanswer[index].upvote += 1;
+			$http({
+				method: 'PUT',
+				url: 'http://localhost:3000/categories/1/questions/' + this.questionID + '/answers/' + answerid
+			}).then(response => {
+				console.log('Response: ', response);
+			}).catch(reject => {
+					console.log('Reject: ', reject);
+			});
+
+			let index = this.findanswer.findIndex(i => i.id === answerid);
+
+			this.findanswer[index].upvote += 1;
 	}
 
 	this.closeModel = () => {
