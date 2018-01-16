@@ -2,7 +2,6 @@ const app = angular.module('QuipProQuo', []);
 
 app.controller('MainController', ['$http', function($http) {
 
-	this.word = 'hi';
 	this.categories = []
 	this.questions = []
 	this.questionID = 0;
@@ -16,7 +15,6 @@ app.controller('MainController', ['$http', function($http) {
 	this.loginForm = false;
 	this.signUpForm = false;
 	this.loggedIn = false;
-	// this.showQuestion = 0;
 	this.url = 'http://localhost:3000';
 	this.user = {};
 	this.err = '';
