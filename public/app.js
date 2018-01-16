@@ -232,7 +232,7 @@ this.login = (userPass) => {
 
 	else {
 
-		this.err = 'Unable to login';
+		this.err = 'Username and/or Password Incorrect';
 	}
  });
 
@@ -258,7 +258,7 @@ this.createUser = (userPass) => {
  }).catch(reject => {
 		console.log('Reject: ', reject);
 
-		this.err = 'Unable to register';
+		this.err = 'Username Already Exists';
 	});
 };
 
