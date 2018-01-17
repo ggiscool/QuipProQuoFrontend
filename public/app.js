@@ -21,9 +21,6 @@ app.controller('MainController', ['$http', function($http) {
 	this.err = '';
 	this.introMessage = true;
 
-
-
-
 // Get categories
 	$http({
 		method: 'GET',
@@ -51,7 +48,9 @@ app.controller('MainController', ['$http', function($http) {
 
 	this.addanswer = () => {
 
-
+		if (this.formData.username == null) {
+			this.formData = {username: this.user.username}
+		}
 		$http({
 			method: 'POST',
 			url: this.herokuUrl + '/categories/1/questions/' + this.questionID + '/answers',
