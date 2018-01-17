@@ -19,6 +19,7 @@ app.controller('MainController', ['$http', function($http) {
 	this.herokuUrl = 'https://quip-pro-quo.herokuapp.com';
 	this.user = {};
 	this.err = '';
+	this.introMessage = true;
 
 
 

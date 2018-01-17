@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='QuipProQuo'>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
@@ -18,6 +19,8 @@
 		</div>
 
 		<h1 class="logo"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</h1>
+
+		<h1 class="mobileLogo"><span class="red">Q</span><span class="green">P</span><span class="blue">Q</span></h1>
 
 		<div class="welcomeUser">
 			<p ng-if="ctrl.loggedIn == true">Welcome: <span class="purple">{{ ctrl.user.username }}!</span></p>
@@ -50,7 +53,12 @@
 		<button class="closeBtn" ng-click="ctrl.openSignUpForm()">Just Kidding</button>
 	</div>
 
-	<p class="intro"><span class="bigFont">Welcome to <span class="dosis"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</span></span><br> The objective is to answer whichever questions you choose with the funniest answer you can think of. You can also vote on your favorite answers submitted by other users! <br> <span ng-click="ctrl.openLoginForm()" ng-if="ctrl.loggedIn == false" class="pink clickable">To Answer Questions Please Login</span></p>
+	<p ng-if="ctrl.introMessage == true" class="intro"><span class="bigFont">Welcome to <span class="dosis"><span class="red">Q</span>uip <span class="green">P</span>ro <span class="blue">Q</span>uo</span></span> <i class="material-icons red clickable" ng-click="ctrl.introMessage = false">cancel</i><br> The objective is to answer whichever questions you choose with the funniest answer you can think of. You can also vote on your favorite answers submitted by other users! </p><br>
+
+	<p class="introBtn clickable" ng-click="ctrl.introMessage = true" ng-if="ctrl.introMessage == false">Instructions</p>
+
+	<p ng-click="ctrl.openLoginForm()" ng-if="ctrl.loggedIn == false" class="message pink clickable">To Answer Questions Please Login</p>
+
 
 
 
@@ -170,13 +178,13 @@
 		<div class="ansModelHeader">
 
 			<h3>{{ ctrl.questionTitle }} Answers</h3>
-				<i class="material-icons closeX" ng-click="ctrl.viewAnswersModal = false">cancel</i>
+				<i class="material-icons black clickable" ng-click="ctrl.viewAnswersModal = false">cancel</i>
 		</div>
 
 
 			<div class="ansScroll">
 				<div class="ansBox" ng-repeat="answer in ctrl.findanswer | orderBy: '-upvote'">
-					<p>{{ answer.username }}:</p> <p>{{ answer.content }}</p>
+					<p>{{ answer.username }}:</p> <p class="black">{{ answer.content }}</p>
 
 					<p ng-if="ctrl.loggedIn == false">{{ answer.upvote }}
 						<i class="material-icons upVoteBtn" ng-click='ctrl.openLoginForm()'>sentiment_very_satisfied</i> <span class="clickable" ng-click='ctrl.openLoginForm()'>Login To Vote</span>

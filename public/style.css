@@ -51,6 +51,9 @@ input {
 .white {
   color: #FFFFFF;
 }
+.black {
+  color: #000000;
+}
 
 .red {
   color: #FF7B6A;
@@ -186,7 +189,7 @@ input {
   font-size: 20px;
 }
 .header {
-  padding: 0 5px 0 5px;
+  padding: 0 3px 0 3px;
   margin: 0 auto;
   width: 98%;
   display: flex;
@@ -199,25 +202,49 @@ input {
   background: rgba(255,255,255,.9);
 }
 .welcomeUser {
-  margin: 2px;
-  min-width: 90px;
+  width: 33%;
+}
+.loginSignup {
+  width: 33%;
+  display: inline-block;
 }
 .loginBtns:hover {
   cursor: pointer;
 }
 .logo {
+  width: 33%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 30px;
+  line-height: 1;
+}
+.mobileLogo {
+  width: 33%;
   margin: 0 auto;
   text-align: center;
   font-family: 'Dosis', sans-serif;
   font-size: 40px;
   line-height: 1;
+  display: none;
 }
 .intro {
   margin: 0 auto;
   margin-top: 100px;
   text-align: center;
   max-width: 600px;
-  margin-bottom: 10px;
+}
+.introBtn {
+  margin: 0 auto;
+  margin-top: 35px;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+.message {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 2px;
 }
 .categoryCard {
   text-align: center;
@@ -270,7 +297,7 @@ input {
   text-align: center;
   width: 100%;
   height: 210px;
-  background: rgba(64, 237, 110, .7);
+  background: rgba(64, 237, 110, .9);
   position: fixed;
   z-index: 10;
   bottom: 0;
@@ -382,12 +409,6 @@ input {
   cursor: pointer;
   background-color: #FF5A45;
 }
-.closeX {
-  color: #000000;
-}
-.closeX:hover {
-  cursor: pointer;
-}
 .ansBox {
   display: flex;
   flex-direction: row;
@@ -404,6 +425,31 @@ input {
   cursor: pointer;
 }
 
-.loginSignup {
-  display: inline-block;
+/* Media Queries!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+@media (max-width: 500px) {
+  .logo {
+    display: none;
+  }
+  .mobileLogo {
+    display: inline-block;
+  }
+  .header {
+    padding: 0 5px 0 5px;
+    width: 96%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 430px) {
+  .ansBox {
+    text-align: center;
+    display: block;
+  }
+  .ansBox > p {
+    margin: 0;
+    line-height: 22px;
+  }
+  .ansBox > p:nth-of-type(3) {
+    border-bottom: 1px dashed #FFFFFF;
+  }
 }
