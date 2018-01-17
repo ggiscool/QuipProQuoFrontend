@@ -86,6 +86,8 @@ app.controller('MainController', ['$http', function($http) {
 
 	this.displayForm = (question) => {
 
+		this.err = '';
+
 		if (this.display == false) {
 
 			this.display = true;
