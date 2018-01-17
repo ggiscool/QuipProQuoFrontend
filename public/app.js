@@ -59,25 +59,29 @@ app.controller('MainController', ['$http', function($http) {
 			this.display = true;
 		}
 
-		$http({
-			method: 'POST',
-			url: this.herokuUrl + '/categories/1/questions/' + this.questionID + '/answers',
-			// url: this.url + '/categories/1/questions/' + this.questionID + '/answers',
-			data: this.formData
-		}).then(response => {
-			console.log('Response ', response.data);
-			this.formData = {};
-			this.answer = response.data;
-			this.findanswer.push(this.answer);
+		else {
+
+			$http({
+				method: 'POST',
+				url: this.herokuUrl + '/categories/1/questions/' + this.questionID + '/answers',
+				// url: this.url + '/categories/1/questions/' + this.questionID + '/answers',
+				data: this.formData
+			}).then(response => {
+				console.log('Response ', response.data);
+				this.formData = {};
+				this.answer = response.data;
+				this.findanswer.push(this.answer);
+				this.formData = {username: this.user.username}
+
+			}).catch(reject => {
+				console.log('Reject: ', reject);
+			});
+
 			this.formData = {username: this.user.username}
 
-		}).catch(reject => {
-			console.log('Reject: ', reject);
-		});
+			this.closeModel();
 
-		this.formData = {username: this.user.username}
-
-		this.closeModel();
+		}
 	};
 
 	this.displayForm = (question) => {
