@@ -2,7 +2,7 @@
 <html ng-app='QuipProQuo'>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
@@ -59,11 +59,6 @@
 	<p class="introBtn clickable" ng-click="ctrl.introMessage = true" ng-if="ctrl.introMessage == false">Instructions</p>
 
 	<p ng-click="ctrl.openLoginForm()" ng-if="ctrl.loggedIn == false" class="message pink clickable">To Answer Questions Please Login</p>
-
-
-
-
-
 
 	<div class="categoryFlex">
 		<div class="categoryCard bgRed" ng-click='ctrl.category1()'>
@@ -200,7 +195,7 @@
 	</div>
 
 	<div class="ansFormModel" ng-if='ctrl.display == true'>
-		<p>{{ctrl.questionContent}}</p>
+		<p class="white">{{ctrl.questionContent}}</p>
 		<p class='red'>{{ ctrl.err }}</p>
 			<form class="submitAnsForm"  ng-submit='ctrl.addanswer()'>
 				<input type='hidden' ng-model='ctrl.formData.username'>

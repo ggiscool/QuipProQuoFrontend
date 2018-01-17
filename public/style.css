@@ -375,9 +375,7 @@ input {
   top: 0;
   padding-top: 25%;
 }
-.ansFormModel > p {
-  color: #FFFFFF;
-}
+
 .submitAnsForm {
   height: 40px;
   margin: 0 auto;
