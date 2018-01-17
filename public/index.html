@@ -201,6 +201,7 @@
 
 	<div class="ansFormModel" ng-if='ctrl.display == true'>
 		<p>{{ctrl.questionContent}}</p>
+		<p class='red'>{{ ctrl.err }}</p>
 			<form class="submitAnsForm"  ng-submit='ctrl.addanswer()'>
 				<input type='hidden' ng-model='ctrl.formData.username'>
 				<input class="textField" type='text' placeholder=' Answer' ng-model='ctrl.formData.content' required autofocus>

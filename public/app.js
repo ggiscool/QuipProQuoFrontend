@@ -51,6 +51,14 @@ app.controller('MainController', ['$http', function($http) {
 		if (this.formData.username == null) {
 			this.formData = {username: this.user.username}
 		}
+
+		if (this.formData.content == null) {
+
+			this.err = 'Please enter again';
+			this.display = false;
+			this.display = true;
+		}
+
 		$http({
 			method: 'POST',
 			url: this.herokuUrl + '/categories/1/questions/' + this.questionID + '/answers',
