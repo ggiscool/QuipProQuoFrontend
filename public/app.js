@@ -27,10 +27,10 @@ app.controller('MainController', ['$http', function($http) {
 		url: this.herokuUrl + '/categories'
 		// url: this.url + '/categories'
 	}).then(response => {
-		console.log('Response: ', response);
+		
 		this.categories = response.data;
 	}).catch(reject => {
-		console.log('Reject: ', reject);
+		
 	});
 
 // Get Questions
@@ -39,7 +39,7 @@ app.controller('MainController', ['$http', function($http) {
 		url: this.herokuUrl + '/categories/1/questions'
 		// url: this.url + '/categories/1/questions'
 	}).then(response => {
-		console.log('Response: ', response);
+		
 		this.questions = response.data;
 	}).catch(reject => {
 		console.log('Reject: ', reject);
@@ -67,7 +67,6 @@ app.controller('MainController', ['$http', function($http) {
 				// url: this.url + '/categories/1/questions/' + this.questionID + '/answers',
 				data: this.formData
 			}).then(response => {
-				console.log('Response ', response.data);
 				this.formData = {};
 				this.answer = response.data;
 				this.findanswer.push(this.answer);
@@ -162,7 +161,7 @@ this.viewAnswers = (question) => {
 		url: this.herokuUrl + '/categories/1/questions/' + this.questionID + '/answers',
 		// url: this.url + '/categories/1/questions/' + this.questionID + '/answers',
 	}).then(response => {
-		console.log('Response: ', response);
+		
 		this.findanswer = response.data;
 	}).catch(reject => {
 			console.log('Reject: ', reject);
@@ -177,7 +176,7 @@ this.viewAnswers = (question) => {
 	if (this.currentquestion == false) {
 
 		this.currentquestion = true;
-		console.log('Viewing answer');
+		
 	}
 
 
@@ -186,7 +185,7 @@ this.viewAnswers = (question) => {
 
 	this.upvote = (answerid) => {
 
-		console.log(answerid);
+		
 
 		this.formData = {user_id: this.user.id, answer_id: answerid, vote: 1};
 
@@ -196,7 +195,7 @@ this.viewAnswers = (question) => {
 			// url: this.url + '/upvotes',
 			data: this.formData
 		}).then(response => {
-			console.log('Response ', response.data);
+			
 			this.putupvote(answerid);
 		}).catch(reject => {
 			console.log('Reject: ', reject);
@@ -251,16 +250,13 @@ this.viewAnswers = (question) => {
 //Authentication--------------
 this.login = (userPass) => {
 
-	console.log(userPass);
 	$http({
 	 method: 'POST',
 	 url: this.herokuUrl + '/users/login',
 	 // url: this.url + '/users/login',
 	 data: { user: { username: userPass.username, password: userPass.password }},
  }).then(response => {
-	 console.log(response.data);
-	 console.log(response.data.status);
-
+	 
 	 if (response.data.status == 200) {
 
 		 this.user = response.data.user;
@@ -280,14 +276,13 @@ this.login = (userPass) => {
 
 this.createUser = (userPass) => {
 
-	console.log(userPass);
 	$http({
 	 method: 'POST',
 	 url: this.herokuUrl + '/users',
 	 // url: this.url + '/users',
 	 data: { user: { username: userPass.username, password: userPass.password }},
  }).then(response => {
-	 console.log(response);
+	 
 	 this.user = response.data.user;
 	 this.loggedIn = true;
 	 this.formData = {username: this.user.username}
@@ -297,7 +292,7 @@ this.createUser = (userPass) => {
 	 	this.openSignUpForm();
 	 }
  }).catch(reject => {
-		console.log('Reject: ', reject);
+		
 
 		this.err = 'Username Already Exists';
 	});
@@ -312,7 +307,7 @@ this.getUsers = () => {
 		Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
 	}
  }).then(response => {
-	 console.log(response);
+	 
 	 if (response.data.status == 401) {
 				this.error = "Unauthorized";
 		} else {
